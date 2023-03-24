@@ -8,108 +8,152 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug"/>
+				<Option working_dir="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab2_4">
-				<Option output="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug/Lab2_4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug"/>
+				<Option output="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Lab2_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab2_4"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab2_4"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab2_4/fast">
-				<Option output="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug/Lab2_4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug"/>
+				<Option output="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Lab2_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab2_4/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab2_4/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.c">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/Undo/undo.c">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.h">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/Undo/undo.h">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/main.c">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/consola/consola.c">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/repository/repository.c">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/consola/consola.h">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/repository/repository.h">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/domeniu/oferta.c">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_domeniu.c">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/domeniu/oferta.h">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_domeniu.h">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/main.c">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_repository.c">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/repository/repository.c">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_repository.h">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/repository/repository.h">
 			<Option target="Lab2_4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/CMakeLists.txt">
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/service/service.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/service/service.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_domeniu.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_domeniu.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_repository.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_repository.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_service.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_service.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_validator.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/testing/teste_validator.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/utilities/filtrari.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/utilities/filtrari.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/utilities/sortare.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/utilities/sortare.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/validator/validare_oferta.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/validator/validare_oferta.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/Users/valentinserban/OOP/proiect_andrei/Lab2-4OOP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

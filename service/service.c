@@ -2,7 +2,7 @@
 // Created by Andrei on 10.03.2023.
 //
 
-#include <malloc.h>
+#include <stdlib.h>
 #include <string.h>
 #include "service.h"
 #include "../utilities/filtrari.h"
@@ -176,7 +176,7 @@ PtrOferta *get_lista_oferte_service(PtrServiceOferte ptr_service)
     return get_lista_repo_oferte(ptr_service->repository);
 }
 
-PtrOferta *filtrare_oferte_service(PtrServiceOferte ptr_service, int* ptr_lungime_finala, char *optiune, char *string, double pret, char ordine)
+PtrOferta *filtrare_oferte_service(PtrServiceOferte ptr_service, int* ptr_lungime_finala, char *optiune, char *string, double pret, char ordine, char *an)
 /**
  * functia de filtrare de oferte din repository in functie de anumiti parametrii
  * @param ptr_service pointer catre structul de tip service cu care se lucreaza
@@ -198,6 +198,9 @@ PtrOferta *filtrare_oferte_service(PtrServiceOferte ptr_service, int* ptr_lungim
     }
     else if(strcmp(optiune, "tip") == 0) {
         nr_final = filtrare_tip(array, array_final, lungime, string);
+    }
+    else if(strcmp(optiune, "data") == 0){
+        nr_final = filtrare_data(array, array_final, lungime, an);
     }
     else{
         if(ordine == '+')

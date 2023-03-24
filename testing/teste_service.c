@@ -3,7 +3,7 @@
 //
 
 #include <assert.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "teste_service.h"
 #include "../repository/repository.h"
 #include "../validator/validare_oferta.h"
@@ -37,16 +37,16 @@ void teste_service() {
     assert(get_numar_oferte_service(service) > 3);
     int lungime;
     PtrOferta *array_filtrare;
-    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '+');
+    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '+', "2023");
     free(array_filtrare);
     assert(lungime == 6);
-    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '-');
+    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '-', "2023");
     free(array_filtrare);
     assert(lungime == 1);
-    array_filtrare = filtrare_oferte_service(service, &lungime, "destinatie", "Venus", 0, '+');
+    array_filtrare = filtrare_oferte_service(service, &lungime, "destinatie", "Venus", 0, '+', "2023");
     free(array_filtrare);
     assert(lungime == 1);
-    array_filtrare = filtrare_oferte_service(service, &lungime, "tip", "Mare", 2000, '-');
+    array_filtrare = filtrare_oferte_service(service, &lungime, "tip", "Mare", 2000, '-', "2023");
     free(array_filtrare);
     assert(lungime == 2);
     array_filtrare = get_lista_oferte_service(service);

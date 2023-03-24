@@ -12,6 +12,7 @@ Aplicatia permite:
  e) Vizualizare oferta filtrate dupa un criteriu (destinatie, tip, pret)
  */
 #include<stdio.h>
+#include <stdlib.h>
 #include "testing/teste_domeniu.h"
 #include "testing/teste_repository.h"
 #include "testing/teste_validator.h"
@@ -50,5 +51,4 @@ int main()
     consola_agentie = constructor_consola(service_agentie);
     run(consola_agentie);
     destructor_consola(consola_agentie);
-
 }

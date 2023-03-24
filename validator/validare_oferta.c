@@ -2,7 +2,7 @@
 // Created by Andrei on 10.03.2023.
 //
 
-#include <malloc.h>
+#include <stdlib.h>
 #include <string.h>
 #include "validare_oferta.h"
 
