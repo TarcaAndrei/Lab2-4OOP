@@ -1,0 +1,291 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_repository.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\testing\teste_repository.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\testing\teste_repository.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Andrei on 09.03.2023.
+        -:    3://
+        -:    4:#include <assert.h>
+        -:    5:#include <string.h>
+        -:    6:#include "teste_repository.h"
+        -:    7:#include "../repository/repository.h"
+        -:    8:
+function teste_repository called 1 returned 100% blocks executed 63%
+        1:    9:void teste_repository() {
+        -:   10:    PtrRepositoryOferte repo;
+        1:   11:    repo = constructor_repository();
+        1:   11-block  0
+call    0 returned 1
+       1*:   12:    assert(get_capacitate_maxima(repo) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   12-block  0
+call    3 never executed
+        1:   12-block  1
+       1*:   13:    assert(get_lungime_repository(repo) == 0);
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   13-block  1
+call    3 never executed
+        1:   13-block  2
+        -:   14:    PtrOferta of1, of2, of3;
+        1:   15:    of1 = constructor_oferta(1, "City Break", "Timisoara", "12/04/2023", 473);
+        1:   15-block  0
+call    0 returned 1
+        1:   16:    of2 = constructor_oferta(2, "Munte", "Sinaia", "12/04/2023", 473);
+call    0 returned 1
+        1:   17:    of3 = constructor_oferta(3, "Mare", "Venus", "10/10/2022", 234);
+call    0 returned 1
+        1:   18:    adauga_oferta(repo,of1);
+call    0 returned 1
+       1*:   19:    assert(get_lungime_repository(repo) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   19-block  0
+call    3 never executed
+        1:   19-block  1
+        1:   20:    adauga_oferta(repo, of2);
+        1:   20-block  0
+call    0 returned 1
+       1*:   21:    assert(get_lungime_repository(repo) == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   21-block  0
+call    3 never executed
+        1:   21-block  1
+        1:   22:    sterge_oferta(repo, of1);
+        1:   22-block  0
+call    0 returned 1
+       1*:   23:    assert(get_lungime_repository(repo) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   23-block  0
+call    3 never executed
+        1:   23-block  1
+        1:   24:    of1 = constructor_oferta(1, "City Break", "Timisoara", "12/04/2023", 473);
+        1:   24-block  0
+call    0 returned 1
+       1*:   25:    assert(sterge_oferta(repo, of1) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   25-block  0
+call    3 never executed
+        1:   25-block  1
+       1*:   26:    assert(get_id_oferta(repo,of1) == 0);
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   26-block  1
+call    3 never executed
+        1:   26-block  2
+       1*:   27:    assert(get_id_oferta(repo,of2) == 2);
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   27-block  1
+call    3 never executed
+        1:   27-block  2
+       1*:   28:    assert(get_tip_oferta(repo, of1)==NULL);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   28-block  1
+call    3 never executed
+        1:   28-block  2
+       1*:   29:    assert(strcmp(get_tip_oferta(repo, of2), "Munte")==0);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   29-block  1
+call    3 never executed
+        1:   29-block  2
+       1*:   30:    assert(get_destinatie_oferta(repo, of1) == NULL);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   30-block  1
+call    3 never executed
+        1:   30-block  2
+       1*:   31:    assert(strcmp(get_destinatie_oferta(repo, of2), "Sinaia")==0);
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   31-block  1
+call    3 never executed
+        1:   31-block  2
+       1*:   32:    assert(get_data_oferta(repo, of1) == NULL);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   32-block  1
+call    3 never executed
+        1:   32-block  2
+       1*:   33:    assert(strcmp(get_data_oferta(repo, of2), "12/04/2023")==0);
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   33-block  1
+call    3 never executed
+        1:   33-block  2
+       1*:   34:    assert(get_pret_oferta(repo,of1) == 0);
+        1:   34-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   34-block  1
+call    3 never executed
+        1:   34-block  2
+       1*:   35:    assert(get_pret_oferta(repo,of2) == 473);
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   35-block  1
+call    3 never executed
+        1:   35-block  2
+        1:   36:    adauga_oferta(repo, of3);
+        1:   36-block  0
+call    0 returned 1
+        -:   37:
+       1*:   38:    assert(modifica_tip_oferta(repo, of1, "ceva")==0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   38-block  0
+call    3 never executed
+        1:   38-block  1
+       1*:   39:    assert(modifica_tip_oferta(repo, of2, "Mare")==1);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   39-block  1
+call    3 never executed
+        1:   39-block  2
+       1*:   40:    assert(modifica_tip_oferta(repo, of3, "Mare")==1);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   40-block  1
+call    3 never executed
+        1:   40-block  2
+       1*:   41:    assert(modifica_destinatie_oferta(repo, of1, "Iasi")==0);
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   41-block  1
+call    3 never executed
+        1:   41-block  2
+       1*:   42:    assert(modifica_destinatie_oferta(repo, of2, "Mamaia")==1);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   42-block  1
+call    3 never executed
+        1:   42-block  2
+       1*:   43:    assert(modifica_data_oferta(repo, of1, "12/40/3924")==0);
+        1:   43-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   43-block  1
+call    3 never executed
+        1:   43-block  2
+       1*:   44:    assert(modifica_data_oferta(repo, of2, "16/07/2023")==1);
+        1:   44-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   44-block  1
+call    3 never executed
+        1:   44-block  2
+       1*:   45:    assert(modifica_pret_oferta(repo, of1, 473)==0);
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   45-block  1
+call    3 never executed
+        1:   45-block  2
+       1*:   46:    assert(modifica_pret_oferta(repo, of2, 473)==1);
+        1:   46-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   46-block  1
+call    3 never executed
+        1:   46-block  2
+       1*:   47:    assert(strcmp(get_tip_oferta(repo, of2), "Mare")==0);
+        1:   47-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   47-block  1
+call    3 never executed
+        1:   47-block  2
+       1*:   48:    assert(strcmp(get_destinatie_oferta(repo, of2), "Mamaia")==0);
+        1:   48-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   48-block  1
+call    3 never executed
+        1:   48-block  2
+       1*:   49:    assert(strcmp(get_data_oferta(repo, of2), "16/07/2023")==0);
+        1:   49-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   49-block  1
+call    3 never executed
+        1:   49-block  2
+        -:   50:
+       1*:   51:    assert(get_oferta_cu_id(repo, 1) == NULL);
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   51-block  1
+call    3 never executed
+        1:   51-block  2
+       1*:   52:    assert(get_oferta_cu_id(repo, 2) == of2);
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   52-block  1
+call    3 never executed
+        1:   52-block  2
+       1*:   53:    assert(get_lista_repo_oferte(repo));
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   53-block  1
+call    3 never executed
+        1:   53-block  2
+        1:   54:    destructor_oferta(of1);
+        1:   54-block  0
+call    0 returned 1
+        1:   55:    destructor_repository(repo);
+call    0 returned 1
+        1:   56:}
+        -:   57:

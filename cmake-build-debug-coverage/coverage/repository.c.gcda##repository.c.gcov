@@ -1,0 +1,553 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/repository/repository.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\repository\repository.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\repository\repository.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Andrei on 09.03.2023.
+        -:    3://
+        -:    4:#include <stdlib.h>
+        -:    5:#include "repository.h"
+        -:    6:
+function constructor_repository called 3 returned 100% blocks executed 100%
+        3:    7:PtrRepositoryOferte constructor_repository()
+        -:    8:/**
+        -:    9: * constructorul unui strunct de tip Repository
+        -:   10: * @return pointer catre structul repository creat
+        -:   11: */
+        -:   12:{
+        3:   13:    PtrRepositoryOferte repository_nou = (PtrRepositoryOferte) malloc(sizeof(RepositoryOferte));
+        3:   14:    repository_nou->lungime = 0;
+        3:   15:    repository_nou->capacitate_maxima = 1;
+        3:   16:    repository_nou->lista_oferte = (PtrOferta *) malloc(repository_nou->capacitate_maxima *sizeof(PtrOferta));
+        3:   17:    return repository_nou;
+        3:   17-block  0
+        -:   18:}
+        -:   19:
+function adauga_oferta called 13 returned 100% blocks executed 100%
+       13:   20:int adauga_oferta(PtrRepositoryOferte pointer_repository, PtrOferta ofera_noua)
+        -:   21:/**
+        -:   22: *
+        -:   23: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:   24: * @param ofera_noua pointer catre structul oferta care urmeaza sa fie adaugat
+        -:   25: * @return coduri de eroare sau succes  1 daca exista deja oferta
+        -:   26: *                                      0 daca s-a adaugat cu succes oferta
+        -:   27: */
+        -:   28:{
+       13:   29:    if(pointer_repository->lungime == pointer_repository->capacitate_maxima){
+       13:   29-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 9
+        4:   30:        realocare(pointer_repository);
+        4:   30-block  0
+call    0 returned 4
+        -:   31:    }
+       40:   32:    for(int i = 0; i<pointer_repository->lungime; i++){
+       13:   32-block  0
+       27:   32-block  1
+       40:   32-block  2
+branch  0 taken 29
+branch  1 taken 11 (fallthrough)
+       29:   33:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(ofera_noua))
+       29:   33-block  0
+call    0 returned 29
+call    1 returned 29
+branch  2 taken 2 (fallthrough)
+branch  3 taken 27
+        2:   34:            return 1;
+        2:   34-block  0
+        -:   35:    }
+       11:   36:    pointer_repository->lista_oferte[pointer_repository->lungime] = ofera_noua; // si daca o am deja?!
+       11:   37:    pointer_repository->lungime++;
+       11:   38:    return 0;
+       11:   38-block  0
+        -:   39:}
+        -:   40:
+        -:   41:
+function get_lungime_repository called 17 returned 100% blocks executed 100%
+       17:   42:int get_lungime_repository(PtrRepositoryOferte pointer_repository)
+        -:   43:/**
+        -:   44: * returneaza numarul lista de oferte din repository
+        -:   45: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:   46: * @return numarul elementelor de tip pointeri catre structurile de tip oferta din repository
+        -:   47: */
+        -:   48:{
+       17:   49:    return pointer_repository->lungime;
+       17:   49-block  0
+        -:   50:}
+        -:   51:
+function get_capacitate_maxima called 1 returned 100% blocks executed 100%
+        1:   52:int get_capacitate_maxima(PtrRepositoryOferte pointer_repository)
+        -:   53:/**
+        -:   54: * returneaza capacitatea maxima a vectorului dinamic din repository
+        -:   55: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:   56: * @return capacitatea maxima
+        -:   57: */
+        -:   58:{
+        1:   59:    return pointer_repository->capacitate_maxima;
+        1:   59-block  0
+        -:   60:}
+        -:   61:
+function realocare called 4 returned 100% blocks executed 100%
+        4:   62:void realocare(PtrRepositoryOferte pointer_repository)
+        -:   63:/**
+        -:   64: * functie de realocare -> mareste capacitatea maxima a vectorului la 2 * dimensiunea initiala
+        -:   65: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:   66: */
+        -:   67:{
+        -:   68:    PtrOferta *lista_noua;
+        4:   69:    lista_noua = (PtrOferta *) malloc(2 * pointer_repository->capacitate_maxima *sizeof(PtrOferta));
+       12:   70:    for(int i = 0; i < pointer_repository->lungime; i++){
+        4:   70-block  0
+       12:   70-block  1
+branch  0 taken 8
+branch  1 taken 4 (fallthrough)
+        8:   71:        lista_noua[i] = pointer_repository->lista_oferte[i];
+        8:   71-block  0
+        -:   72:    }
+        4:   73:    free(pointer_repository->lista_oferte);
+        4:   74:    pointer_repository->lista_oferte = lista_noua;
+        4:   75:    pointer_repository->capacitate_maxima = 2 * pointer_repository->capacitate_maxima;
+        4:   76:}
+        -:   77:
+function sterge_oferta called 3 returned 100% blocks executed 100%
+        3:   78:int sterge_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta_de_sters)
+        -:   79:/**
+        -:   80: *
+        -:   81: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:   82: * @param oferta_de_sters pointer catre oferta ce urmeaza sa fie eliminata
+        -:   83: * @return  diferite coduri de eroare sau succes dupa cum urmeaza:
+        -:   84: *                      @return 1 daca functia a sters cu succes oferta
+        -:   85: *                              0 daca ID-ul ofertei nu exista in repository
+        -:   86: */
+        -:   87:{
+        3:   88:    int gasit = -1;
+        5:   89:    for(int i = 0; i < pointer_repository->lungime; i++){
+        3:   89-block  0
+        2:   89-block  1
+        5:   89-block  2
+branch  0 taken 4
+branch  1 taken 1 (fallthrough)
+        4:   90:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta_de_sters)){
+        4:   90-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:   91:            gasit = i;
+        2:   92:            break;
+        2:   92-block  0
+        -:   93:        }
+        -:   94:    }
+        3:   95:    if(gasit == -1){
+        3:   95-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:   96:        return 0;
+        1:   96-block  0
+        -:   97:    }
+        2:   98:    destructor_oferta(pointer_repository->lista_oferte[gasit]);
+        2:   98-block  0
+call    0 returned 2
+        2:   99:    pointer_repository->lungime--;
+        3:  100:    for(int i = gasit; i<pointer_repository->lungime; i++){
+        3:  100-block  0
+branch  0 taken 1
+branch  1 taken 2 (fallthrough)
+        1:  101:        pointer_repository->lista_oferte[i] = pointer_repository->lista_oferte[i+1];
+        1:  101-block  0
+        -:  102:    }
+        2:  103:    return 1;
+        2:  103-block  0
+        -:  104:}
+        -:  105:
+function get_id_oferta called 2 returned 100% blocks executed 100%
+        2:  106:int get_id_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta)
+        -:  107:/**
+        -:  108: * functie de getter pentru id-ul unei oferte din repository
+        -:  109: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  110: * @param oferta pointer catre oferta
+        -:  111: * @return  ID-ul ofertei daca o gaseste in repo
+        -:  112: *          0 altfel
+        -:  113: */
+        -:  114:{
+        2:  115:    int i = 0;
+        3:  116:    while(i<pointer_repository->lungime){
+        2:  116-block  0
+        3:  116-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  117:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        2:  117-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  118:            return get_id(pointer_repository->lista_oferte[i]);
+        1:  118-block  0
+call    0 returned 1
+        -:  119:        }
+        1:  120:        i++;
+        1:  120-block  0
+        -:  121:    }
+        1:  122:    return 0;
+        1:  122-block  0
+        -:  123:}
+        -:  124:
+function get_tip_oferta called 3 returned 100% blocks executed 100%
+        3:  125:char *get_tip_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta)
+        -:  126:/**
+        -:  127: * functie de getter pentru tipul ofertei
+        -:  128: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  129: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  130: * @return string nevid din multimea {Mare, Munte, City Break} reprezentand tipul ofertei
+        -:  131: *          NULL daca nu exista oferta in repository
+        -:  132: */
+        -:  133:{
+        3:  134:    int i = 0;
+        4:  135:    while(i<pointer_repository->lungime){
+        3:  135-block  0
+        4:  135-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:  136:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        3:  136-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:  137:            return get_tip(pointer_repository->lista_oferte[i]);
+        2:  137-block  0
+call    0 returned 2
+        -:  138:        }
+        1:  139:        i++;
+        1:  139-block  0
+        -:  140:    }
+        1:  141:    return NULL;
+        1:  141-block  0
+        -:  142:}
+        -:  143:
+function get_destinatie_oferta called 3 returned 100% blocks executed 100%
+        3:  144:char *get_destinatie_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta)
+        -:  145:/**
+        -:  146: * functie de getter pentru destinatia ofertei
+        -:  147: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  148: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  149: * @return string de cel putin 2 caractere reprezentand destinatiei ofertei
+        -:  150: *          NULL daca nu exista oferta in repository
+        -:  151: */
+        -:  152:{
+        3:  153:    int i = 0;
+        4:  154:    while(i<pointer_repository->lungime){
+        3:  154-block  0
+        4:  154-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:  155:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        3:  155-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:  156:            return get_destinatie(pointer_repository->lista_oferte[i]);
+        2:  156-block  0
+call    0 returned 2
+        -:  157:        }
+        1:  158:        i++;
+        1:  158-block  0
+        -:  159:    }
+        1:  160:    return NULL;
+        1:  160-block  0
+        -:  161:}
+        -:  162:
+function get_data_oferta called 3 returned 100% blocks executed 100%
+        3:  163:char *get_data_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta)
+        -:  164:/**
+        -:  165: * functie de getter pentru data de plecare a ofertei
+        -:  166: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  167: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  168: * @return string de forma <zz/ll/aaaa> reprezentand data de inceput a ofertei
+        -:  169: *          NULL daca nu exista oferta in repository
+        -:  170: */
+        -:  171:{
+        3:  172:    int i = 0;
+        4:  173:    while(i<pointer_repository->lungime){
+        3:  173-block  0
+        4:  173-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:  174:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        3:  174-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:  175:            return get_data_plecare(pointer_repository->lista_oferte[i]);
+        2:  175-block  0
+call    0 returned 2
+        -:  176:        }
+        1:  177:        i++;
+        1:  177-block  0
+        -:  178:    }
+        1:  179:    return NULL;
+        1:  179-block  0
+        -:  180:}
+        -:  181:
+function get_pret_oferta called 2 returned 100% blocks executed 100%
+        2:  182:double get_pret_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta)
+        -:  183:/**
+        -:  184: * functie de getter pentru pretul ofertei
+        -:  185: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  186: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  187: * @return  double pozitiv reprezentand pretul ofertei
+        -:  188: *          0 daca nu exista oferta in repository
+        -:  189: */
+        -:  190:{
+        2:  191:    int i = 0;
+        3:  192:    while(i<pointer_repository->lungime){
+        2:  192-block  0
+        3:  192-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  193:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        2:  193-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  194:            return get_pret(pointer_repository->lista_oferte[i]);
+        1:  194-block  0
+call    0 returned 1
+        -:  195:        }
+        1:  196:        i++;
+        1:  196-block  0
+        -:  197:    }
+        1:  198:    return 0;
+        1:  198-block  0
+        -:  199:}
+        -:  200:
+function destructor_repository called 3 returned 100% blocks executed 100%
+        3:  201:void destructor_repository(PtrRepositoryOferte pointer_repository)
+        -:  202:/**
+        -:  203: * destructorul repositoryului
+        -:  204: * @param ptr_service pointerul catre structul de tip repository care urmeaza sa fie dealocat
+        -:  205: */
+        -:  206:{
+       12:  207:    for(int i=0; i<pointer_repository->lungime; i++){
+        3:  207-block  0
+       12:  207-block  1
+branch  0 taken 9
+branch  1 taken 3 (fallthrough)
+        9:  208:        destructor_oferta(pointer_repository->lista_oferte[i]);
+        9:  208-block  0
+call    0 returned 9
+        -:  209:    }
+        3:  210:    free(pointer_repository->lista_oferte);
+        3:  211:    free(pointer_repository);
+        3:  212:}
+        -:  213:
+function modifica_tip_oferta called 6 returned 100% blocks executed 100%
+        6:  214:int modifica_tip_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta, char *tip_nou)
+        -:  215:/**
+        -:  216: * functie de setter pentru tipul unei oferte
+        -:  217: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  218: * @param tip_nou string nevid din multimea {Mare, Munte, City Break} reprezentand noul tip al ofertei
+        -:  219: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  220: * @return coduri de succes sau eroare
+        -:  221: *              1 daca opertatia s-a desfasurat
+        -:  222: *              0 daca nu exista nicio oferta cu acelasi id cu oferta primita
+        -:  223: */
+        -:  224:{
+        6:  225:    int i = 0;
+        6:  226:    int gasit = 0;
+       14:  227:    while(i<pointer_repository->lungime && !gasit){
+        6:  227-block  0
+       14:  227-block  1
+branch  0 taken 9 (fallthrough)
+branch  1 taken 5
+        9:  227-block  2
+branch  2 taken 8
+branch  3 taken 1 (fallthrough)
+        8:  228:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        8:  228-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 5 (fallthrough)
+branch  3 taken 3
+        5:  229:            gasit = 1;
+        5:  230:            set_tip(pointer_repository->lista_oferte[i], tip_nou);
+        5:  230-block  0
+call    0 returned 5
+        -:  231:        }
+        8:  232:        i++;
+        8:  232-block  0
+        -:  233:    }
+        6:  234:    return gasit;
+        6:  234-block  0
+        -:  235:}
+        -:  236:
+function modifica_destinatie_oferta called 5 returned 100% blocks executed 100%
+        5:  237:int modifica_destinatie_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta, char *destinatie_noua)
+        -:  238:/**
+        -:  239: * functie de setter pentru desitnatie pentru o oferta
+        -:  240: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  241: * @param destinatie_noua string de cel putin 2 caractere reprezentand noua destinatie
+        -:  242: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  243: * @return coduri de succes sau eroare
+        -:  244: *              1 daca opertatia s-a desfasurat
+        -:  245: *              0 daca nu exista nicio oferta cu acelasi id cu oferta primita
+        -:  246: */
+        -:  247:{
+        5:  248:    int i = 0;
+        5:  249:    int gasit = 0;
+       11:  250:    while(i<pointer_repository->lungime && !gasit){
+        5:  250-block  0
+       11:  250-block  1
+branch  0 taken 7 (fallthrough)
+branch  1 taken 4
+        7:  250-block  2
+branch  2 taken 6
+branch  3 taken 1 (fallthrough)
+        6:  251:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        6:  251-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:  252:            gasit = 1;
+        4:  253:            set_destinatie(pointer_repository->lista_oferte[i], destinatie_noua);
+        4:  253-block  0
+call    0 returned 4
+        -:  254:        }
+        6:  255:        i++;
+        6:  255-block  0
+        -:  256:    }
+        5:  257:    return gasit;
+        5:  257-block  0
+        -:  258:}
+        -:  259:
+function modifica_pret_oferta called 5 returned 100% blocks executed 100%
+        5:  260:int modifica_pret_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta, double pret_nou)
+        -:  261:/**
+        -:  262: * functie de setter de pret a unei oferte
+        -:  263: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  264: * @param pret_nou double pozitiv reprezentand noul pret al ofertei
+        -:  265: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  266: * @return coduri de succes sau eroare
+        -:  267: *              1 daca opertatia s-a desfasurat
+        -:  268: *              0 daca nu exista nicio oferta cu acelasi id cu oferta primita
+        -:  269: */
+        -:  270:{
+        5:  271:    int i = 0;
+        5:  272:    int gasit = 0;
+       11:  273:    while(i<pointer_repository->lungime && !gasit){
+        5:  273-block  0
+       11:  273-block  1
+branch  0 taken 7 (fallthrough)
+branch  1 taken 4
+        7:  273-block  2
+branch  2 taken 6
+branch  3 taken 1 (fallthrough)
+        6:  274:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        6:  274-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:  275:            gasit = 1;
+        4:  276:            set_pret(pointer_repository->lista_oferte[i], pret_nou);
+        4:  276-block  0
+call    0 returned 4
+        -:  277:        }
+        6:  278:        i++;
+        6:  278-block  0
+        -:  279:    }
+        5:  280:    return gasit;
+        5:  280-block  0
+        -:  281:}
+        -:  282:
+function modifica_data_oferta called 5 returned 100% blocks executed 100%
+        5:  283:int modifica_data_oferta(PtrRepositoryOferte pointer_repository, PtrOferta oferta, char *data_noua)
+        -:  284:/**
+        -:  285: * functie de setter pentru data de plecare a unei oferte
+        -:  286: * @param oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  287: * @param data_plecare_noua string de forma <zz/ll/aaaa> reprezentand noua data
+        -:  288: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  289: * @return coduri de succes sau eroare
+        -:  290: *              1 daca opertatia s-a desfasurat
+        -:  291: *              0 daca nu exista nicio oferta cu acelasi id cu oferta primita
+        -:  292: */
+        -:  293:{
+        5:  294:    int i = 0;
+        5:  295:    int gasit = 0;
+       11:  296:    while(i<pointer_repository->lungime && !gasit){
+        5:  296-block  0
+       11:  296-block  1
+branch  0 taken 7 (fallthrough)
+branch  1 taken 4
+        7:  296-block  2
+branch  2 taken 6
+branch  3 taken 1 (fallthrough)
+        6:  297:        if(get_id(pointer_repository->lista_oferte[i]) == get_id(oferta)){
+        6:  297-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:  298:            gasit = 1;
+        4:  299:            set_data_plecare(pointer_repository->lista_oferte[i], data_noua);
+        4:  299-block  0
+call    0 returned 4
+        -:  300:        }
+        6:  301:        i++;
+        6:  301-block  0
+        -:  302:    }
+        5:  303:    return gasit;
+        5:  303-block  0
+        -:  304:}
+        -:  305:
+function get_oferta_cu_id called 17 returned 100% blocks executed 100%
+       17:  306:PtrOferta get_oferta_cu_id(PtrRepositoryOferte pointer_repository, int id_oferta)
+        -:  307:/**
+        -:  308: * returneaza oferta cu id-ul primit
+        -:  309: * @param pointer_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  310: * @param id_oferta ID-ul ofertei, intreg pozitiv
+        -:  311: * @return returneaza oferta cu id-ul primit
+        -:  312: *          NULL daca nu exista nicio oferta cu respectivul id
+        -:  313: */
+        -:  314:{
+       17:  315:    int i = 0;
+       37:  316:    while(i<pointer_repository->lungime){
+       17:  316-block  0
+       37:  316-block  1
+branch  0 taken 33
+branch  1 taken 4 (fallthrough)
+       33:  317:        if(get_id(pointer_repository->lista_oferte[i]) == id_oferta){
+       33:  317-block  0
+call    0 returned 33
+branch  1 taken 13 (fallthrough)
+branch  2 taken 20
+       13:  318:            return pointer_repository->lista_oferte[i];
+       13:  318-block  0
+        -:  319:        }
+       20:  320:        i++;
+       20:  320-block  0
+        -:  321:    }
+        4:  322:    return NULL;
+        4:  322-block  0
+        -:  323:}
+        -:  324:
+function get_lista_repo_oferte called 10 returned 100% blocks executed 100%
+       10:  325:PtrOferta* get_lista_repo_oferte(PtrRepositoryOferte ptr_repository)
+        -:  326:/**
+        -:  327: * returneaza pointerul catre array-ul de pointeri catre structuri de tip oferta din repository
+        -:  328: * @param ptr_repository pointer catre structul de tip repository cu care se lucreaza
+        -:  329: * @return pointerul catre array-ul de pointeri catre structuri de tip oferta din repository
+        -:  330: */
+        -:  331:{
+       10:  332:    return ptr_repository->lista_oferte;
+       10:  332-block  0
+        -:  333:}
+        -:  334:
+        -:  335:
+        -:  336:
+        -:  337:

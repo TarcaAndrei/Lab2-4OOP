@@ -1,0 +1,55 @@
+The system is: Linux - 5.15.90.1-microsoft-standard-WSL2 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e7a22/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e7a22.dir/build.make CMakeFiles/cmTC_e7a22.dir/build
+gmake[1]: Entering directory '/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7a22.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_e7a22.dir/testCCompiler.c.o -c "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_e7a22
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7a22.dir/link.txt --verbose=1
+/usr/bin/gcc CMakeFiles/cmTC_e7a22.dir/testCCompiler.c.o -o cmTC_e7a22 
+gmake[1]: Leaving directory '/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp'
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ee331/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ee331.dir/build.make CMakeFiles/cmTC_ee331.dir/build
+gmake[1]: Entering directory '/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ee331.dir/testCXXCompiler.cxx.o
+/usr/bin/g++    -o CMakeFiles/cmTC_ee331.dir/testCXXCompiler.cxx.o -c "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_ee331
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee331.dir/link.txt --verbose=1
+/usr/bin/g++ CMakeFiles/cmTC_ee331.dir/testCXXCompiler.cxx.o -o cmTC_ee331 
+gmake[1]: Leaving directory '/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles/CMakeTmp'
+
+
+

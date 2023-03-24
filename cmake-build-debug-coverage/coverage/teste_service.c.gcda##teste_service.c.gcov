@@ -1,0 +1,302 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_service.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\testing\teste_service.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\testing\teste_service.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Andrei on 10.03.2023.
+        -:    3://
+        -:    4:
+        -:    5:#include <assert.h>
+        -:    6:#include <malloc.h>
+        -:    7:#include "teste_service.h"
+        -:    8:#include "../repository/repository.h"
+        -:    9:#include "../validator/validare_oferta.h"
+        -:   10:#include "../service/service.h"
+        -:   11:
+function teste_service called 1 returned 100% blocks executed 63%
+        1:   12:void teste_service() {
+        -:   13:    PtrRepositoryOferte repo;
+        1:   14:    repo = constructor_repository();
+        1:   14-block  0
+call    0 returned 1
+        -:   15:    PtrValidareOferta valid;
+        1:   16:    valid = constructor_validator();
+call    0 returned 1
+        -:   17:    PtrServiceOferte service;
+        1:   18:    service = constructor_service(repo, valid);
+call    0 returned 1
+       1*:   19:    assert(get_numar_oferte_service(service) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   19-block  0
+call    3 never executed
+        1:   19-block  1
+       1*:   20:    assert(adauga_oferta_service(service, 1, "City Break", "Timisoara", "12/04/2023", 473) == 0);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   20-block  1
+call    3 never executed
+        1:   20-block  2
+       1*:   21:    assert(adauga_oferta_service(service, 1, "Munte", "Arad", "12/05/2023", 4735) == 2);
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   21-block  1
+call    3 never executed
+        1:   21-block  2
+       1*:   22:    assert(adauga_oferta_service(service, -1, "altcv", "", "12/05/202", -4735) == 11111);
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   22-block  1
+call    3 never executed
+        1:   22-block  2
+       1*:   23:    assert(get_numar_oferte_service(service) == 1);
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   23-block  1
+call    3 never executed
+        1:   23-block  2
+       1*:   24:    assert(adauga_oferta_service(service, 2, "Munte", "Predeal", "23/07/2023", 4839.53) == 0);
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   24-block  1
+call    3 never executed
+        1:   24-block  2
+       1*:   25:    assert(get_numar_oferte_service(service) == 2);
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   25-block  1
+call    3 never executed
+        1:   25-block  2
+        -:   26:
+       1*:   27:    assert(sterge_oferta_service(service, 5) == 2);
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   27-block  1
+call    3 never executed
+        1:   27-block  2
+       1*:   28:    assert(sterge_oferta_service(service, 2) == 1);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   28-block  1
+call    3 never executed
+        1:   28-block  2
+       1*:   29:    assert(sterge_oferta_service(service, -2) == 0);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   29-block  1
+call    3 never executed
+        1:   29-block  2
+       1*:   30:    assert(get_numar_oferte_service(service) == 1);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   30-block  1
+call    3 never executed
+        1:   30-block  2
+        -:   31:
+       1*:   32:    assert(modifica_oferta_service(service, 1, "Munte", "Predeal", "23/07/2023", 4839.53) == 0);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   32-block  1
+call    3 never executed
+        1:   32-block  2
+       1*:   33:    assert(modifica_oferta_service(service, 1, "Mare", "Predeal", "23/07/2023", 4839.53) == 0);
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   33-block  1
+call    3 never executed
+        1:   33-block  2
+       1*:   34:    assert(modifica_oferta_service(service, 1, "City Break", "Predeal", "23/07/2023", 4839.53) == 0);
+        1:   34-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   34-block  1
+call    3 never executed
+        1:   34-block  2
+       1*:   35:    assert(modifica_oferta_service(service, 1, "altcv", "", "23/7/2023", -4839.53) == 1111);
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   35-block  1
+call    3 never executed
+        1:   35-block  2
+        1:   36:    autopopulare_service(service);
+        1:   36-block  0
+call    0 returned 1
+       1*:   37:    assert(get_numar_oferte_service(service) > 3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   37-block  0
+call    3 never executed
+        1:   37-block  1
+        -:   38:    int lungime;
+        -:   39:    PtrOferta *array_filtrare;
+        1:   40:    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '+');
+        1:   40-block  0
+call    0 returned 1
+        1:   41:    free(array_filtrare);
+       1*:   42:    assert(lungime == 6);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   42-block  0
+call    2 never executed
+        1:   42-block  1
+        1:   43:    array_filtrare = filtrare_oferte_service(service, &lungime, "pret", "", 2000, '-');
+        1:   43-block  0
+call    0 returned 1
+        1:   44:    free(array_filtrare);
+       1*:   45:    assert(lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   45-block  0
+call    2 never executed
+        1:   45-block  1
+        1:   46:    array_filtrare = filtrare_oferte_service(service, &lungime, "destinatie", "Venus", 0, '+');
+        1:   46-block  0
+call    0 returned 1
+        1:   47:    free(array_filtrare);
+       1*:   48:    assert(lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   48-block  0
+call    2 never executed
+        1:   48-block  1
+        1:   49:    array_filtrare = filtrare_oferte_service(service, &lungime, "tip", "Mare", 2000, '-');
+        1:   49-block  0
+call    0 returned 1
+        1:   50:    free(array_filtrare);
+       1*:   51:    assert(lungime == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   51-block  0
+call    2 never executed
+        1:   51-block  1
+        1:   52:    array_filtrare = get_lista_oferte_service(service);
+        1:   52-block  0
+call    0 returned 1
+        1:   53:    sortare_oferte_service(service,1, '+');
+call    0 returned 1
+       1*:   54:    assert(get_id(array_filtrare[0]) == 24);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   54-block  0
+call    3 never executed
+        1:   54-block  1
+       1*:   55:    assert(get_id(array_filtrare[1]) == 23);
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   55-block  1
+call    3 never executed
+        1:   55-block  2
+        1:   56:    sortare_oferte_service(service,1, '-');
+        1:   56-block  0
+call    0 returned 1
+       1*:   57:    assert(get_id(array_filtrare[0]) == 25);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   57-block  0
+call    3 never executed
+        1:   57-block  1
+       1*:   58:    assert(get_id(array_filtrare[1]) == 22);
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   58-block  1
+call    3 never executed
+        1:   58-block  2
+        1:   59:    sortare_oferte_service(service,2, '+');
+        1:   59-block  0
+call    0 returned 1
+       1*:   60:    assert(get_id(array_filtrare[0]) == 24);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   60-block  0
+call    3 never executed
+        1:   60-block  1
+       1*:   61:    assert(get_id(array_filtrare[1]) == 21);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   61-block  1
+call    3 never executed
+        1:   61-block  2
+        1:   62:    sortare_oferte_service(service,2, '-');
+        1:   62-block  0
+call    0 returned 1
+       1*:   63:    assert(get_id(array_filtrare[0]) == 20);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   63-block  0
+call    3 never executed
+        1:   63-block  1
+       1*:   64:    assert(get_id(array_filtrare[1]) == 22);
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   64-block  1
+call    3 never executed
+        1:   64-block  2
+       1*:   65:    assert(modifica_oferta_service(service,-1, "\n", "\n", "\n", 0) ==10000);
+        1:   65-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   65-block  1
+call    3 never executed
+        1:   65-block  2
+       1*:   66:    assert(modifica_oferta_service(service,100 , "\n", "\n", "\n", 0) ==2);
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   66-block  1
+call    3 never executed
+        1:   66-block  2
+       1*:   67:    assert(modifica_oferta_service(service,20 , "\n", "\n", "\n", 0) == 0);
+        1:   67-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   67-block  1
+call    3 never executed
+        1:   67-block  2
+        1:   68:    destructor_service(service);
+        1:   68-block  0
+call    0 returned 1
+        1:   69:}

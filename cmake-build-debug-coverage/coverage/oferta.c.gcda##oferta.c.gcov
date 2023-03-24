@@ -1,0 +1,341 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\domeniu\oferta.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\domeniu\oferta.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "oferta.h"
+        -:    2:#include<stdlib.h>
+        -:    3:#include<string.h>
+        -:    4:#include<stdio.h>
+        -:    5://
+        -:    6:// Created by Andrei on 08.03.2023.
+        -:    7://
+function constructor_oferta called 19 returned 100% blocks executed 100%
+       19:    8:PtrOferta constructor_oferta(int id_oferta, char tip[], char destinatie[], char data_plecare[], double pret)
+        -:    9:/**
+        -:   10: * constructorul unui struct de tip oferta cu atributele reprezentate de urmatorii parametrii
+        -:   11: * @param id_oferta intreg pozitiv reprezentand id-ul viitoarei oferte
+        -:   12: * @param tip string nevid din multimea {Mare, Munte, City Break} reprezentand tipul viitoarei oferte
+        -:   13: * @param destinatie string de cel putin 2 caractere reprezentand destinatiei viitoarei oferte
+        -:   14: * @param data_plecare string de forma <zz/ll/aaaa> reprezentand data de inceput a viitoarei oferte
+        -:   15: * @param pret double pozitiv reprezentand pretul viitoarei oferte
+        -:   16: * @return pointer catre structul format
+        -:   17: */
+        -:   18:{
+       19:   19:    PtrOferta oferta_noua = (PtrOferta) malloc(sizeof(Oferta));
+       19:   20:    oferta_noua->id_oferta = id_oferta;
+       19:   21:    strcpy(oferta_noua->tip, tip);
+       19:   22:    strcpy(oferta_noua->destinatie, destinatie);
+       19:   23:    strcpy(oferta_noua->data_plecare, data_plecare);
+       19:   24:    oferta_noua->pret = pret;
+       19:   25:    return oferta_noua;
+       19:   25-block  0
+        -:   26:}
+        -:   27:
+function get_id called 201 returned 100% blocks executed 100%
+      201:   28:int get_id(PtrOferta pointer_oferta)
+        -:   29:/**
+        -:   30: * getter pentru id
+        -:   31: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   32: * @return un intreg reprezentand ID-ul ofertei
+        -:   33: */
+        -:   34:{
+      201:   35:    return pointer_oferta->id_oferta;
+      201:   35-block  0
+        -:   36:}
+        -:   37:
+function get_tip called 43 returned 100% blocks executed 100%
+       43:   38:char* get_tip(PtrOferta pointer_oferta)
+        -:   39:/**
+        -:   40: * functie de getter pentru tipul ofertei
+        -:   41: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   42: * @return string nevid din multimea {Mare, Munte, City Break} reprezentand tipul ofertei
+        -:   43: */
+        -:   44:{
+       43:   45:    return pointer_oferta->tip;
+       43:   45-block  0
+        -:   46:}
+        -:   47:
+function get_destinatie called 109 returned 100% blocks executed 100%
+      109:   48:char* get_destinatie(PtrOferta pointer_oferta)
+        -:   49:/**
+        -:   50: * functie de getter pentru destinatia ofertei
+        -:   51: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   52: * @return string de cel putin 2 caractere reprezentand destinatiei ofertei
+        -:   53: */
+        -:   54:{
+      109:   55:    return pointer_oferta->destinatie;
+      109:   55-block  0
+        -:   56:}
+        -:   57:
+function get_data_plecare called 18 returned 100% blocks executed 100%
+       18:   58:char* get_data_plecare(PtrOferta pointer_oferta)
+        -:   59:/**
+        -:   60: * functie de getter pentru data de plecare a ofertei
+        -:   61: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   62: * @return string de forma <zz/ll/aaaa> reprezentand data de inceput a ofertei
+        -:   63: */
+        -:   64:{
+       18:   65:    return pointer_oferta->data_plecare;
+       18:   65-block  0
+        -:   66:}
+        -:   67:
+function get_pret called 115 returned 100% blocks executed 100%
+      115:   68:double get_pret(PtrOferta pointer_oferta)
+        -:   69:/**
+        -:   70: * functie de getter pentru pretul ofertei
+        -:   71: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   72: * @return double pozitiv reprezentand pretul ofertei
+        -:   73: */
+        -:   74:{
+      115:   75:    return pointer_oferta->pret;
+      115:   75-block  0
+        -:   76:}
+        -:   77:
+function set_tip called 6 returned 100% blocks executed 100%
+        6:   78:void set_tip(PtrOferta pointer_oferta, char *tip_nou)
+        -:   79:/**
+        -:   80: * functie de setter pentru tipul unei oferte
+        -:   81: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   82: * @param tip_nou string nevid din multimea {Mare, Munte, City Break} reprezentand noul tip al ofertei
+        -:   83: */
+        -:   84:{
+        6:   85:    strcpy(pointer_oferta->tip, tip_nou);
+        6:   86:}
+        -:   87:
+function set_destinatie called 5 returned 100% blocks executed 100%
+        5:   88:void set_destinatie(PtrOferta pointer_oferta, char *destinatie_noua)
+        -:   89:/**
+        -:   90: * functie de setter pentru desitnatie pentru o oferta
+        -:   91: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:   92: * @param destinatie_noua string de cel putin 2 caractere reprezentand noua destinatie
+        -:   93: */
+        -:   94:{
+        5:   95:    strcpy(pointer_oferta->destinatie, destinatie_noua);
+        5:   96:}
+        -:   97:
+function set_data_plecare called 5 returned 100% blocks executed 100%
+        5:   98:void set_data_plecare(PtrOferta pointer_oferta, char *data_plecare_noua)
+        -:   99:/**
+        -:  100: * functie de setter pentru data de plecare a unei oferte
+        -:  101: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  102: * @param data_plecare_noua string de forma <zz/ll/aaaa> reprezentand noua data
+        -:  103: */
+        -:  104:{
+        5:  105:    strcpy(pointer_oferta->data_plecare, data_plecare_noua);
+        5:  106:}
+        -:  107:
+function set_pret called 5 returned 100% blocks executed 100%
+        5:  108:void set_pret(PtrOferta pointer_oferta, double pret_nou)
+        -:  109:/**
+        -:  110: * functie de setter de pret a unei oferte
+        -:  111: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  112: * @param pret_nou double pozitiv reprezentand noul pret al ofertei
+        -:  113: */
+        -:  114:{
+        5:  115:    pointer_oferta->pret = pret_nou;
+        5:  116:}
+        -:  117:
+function nr_cifre_ceva called 2 returned 100% blocks executed 100%
+        2:  118:int nr_cifre_ceva(int n)
+        -:  119:/**
+        -:  120: * afla numarul de cifre ale nr-ul n primit
+        -:  121: * @param n numar intreg
+        -:  122: * @return numarul de cifre
+        -:  123: */
+        -:  124:{
+        2:  125:    int i = 0;
+        5:  126:    while(n > 0){
+        2:  126-block  0
+        5:  126-block  1
+branch  0 taken 3
+branch  1 taken 2 (fallthrough)
+        3:  127:        i++;
+        3:  128:        n/=10;
+        3:  128-block  0
+        -:  129:    }
+        2:  130:    return i;
+        2:  130-block  0
+        -:  131:}
+        -:  132:
+function afisare_oferta called 2 returned 100% blocks executed 100%
+        2:  133:char *afisare_oferta(PtrOferta pointer_oferta)
+        -:  134:/**
+        -:  135: * functia de afisare a unei oferte
+        -:  136: * @param pointer_oferta pointer catre structul de tip oferta cu care se lucreaza
+        -:  137: */
+        -:  138:{
+        -:  139:    char *printare;     // nu da return la asta ca asa o zis istvan
+        2:  140:    printare = (char *)malloc(110 * sizeof(char));
+        -:  141:    char pret_str[10];
+        -:  142:    char id_str[10];
+        -:  143:    int cifre_id;
+        -:  144:    int nr_spatiu_1;
+        -:  145:    int nr_spatiu_2;
+        -:  146:    int i;
+        -:  147:    // pentru ID am 8
+        -:  148:    // pnetru TIP am 13
+        -:  149:    // pentru Destinatie am 20
+        -:  150:    // pentru Data de plecare am 19
+        -:  151:    // pentru pret am 12
+        2:  152:    sprintf(id_str, "%d", pointer_oferta->id_oferta);
+        2:  152-block  0
+call    0 returned 2
+        2:  153:    sprintf(pret_str, "%.2f", pointer_oferta->pret);
+call    0 returned 2
+        2:  154:    cifre_id = nr_cifre_ceva(pointer_oferta->id_oferta);
+call    0 returned 2
+        2:  155:    cifre_id = 8 - cifre_id;
+        2:  156:    if(cifre_id % 2 == 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  157:        nr_spatiu_1 = cifre_id/2;
+        1:  158:        nr_spatiu_2 = cifre_id/2;
+        1:  158-block  0
+        -:  159:    } else{
+        1:  160:        nr_spatiu_1 = cifre_id/2;
+        1:  161:        nr_spatiu_2 = nr_spatiu_1 + 1;
+        1:  161-block  0
+        -:  162:    }
+        2:  163:    strcpy(printare, "|");
+        8:  164:    for(i = 1; i<=nr_spatiu_1; i++)
+        2:  164-block  0
+        8:  164-block  1
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        6:  165:        strcat(printare, " ");
+        6:  165-block  0
+        2:  166:    strcat(printare, id_str);
+        9:  167:    for(i = 1; i<=nr_spatiu_2; i++)
+        2:  167-block  0
+        9:  167-block  1
+branch  0 taken 7
+branch  1 taken 2 (fallthrough)
+        7:  168:        strcat(printare, " ");
+        7:  168-block  0
+        -:  169:
+        2:  170:    strcat(printare, "|");
+        -:  171:
+        2:  172:    cifre_id = (int)strlen(pointer_oferta->tip);
+        2:  173:    cifre_id = 13 - cifre_id;
+        2:  174:    if(cifre_id % 2 == 0){
+        2:  174-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  175:        nr_spatiu_1 = cifre_id/2;
+        1:  176:        nr_spatiu_2 = cifre_id/2;
+        1:  176-block  0
+        -:  177:    } else{
+        1:  178:        nr_spatiu_1 = cifre_id/2;
+        1:  179:        nr_spatiu_2 = nr_spatiu_1 + 1;
+        1:  179-block  0
+        -:  180:    }
+        -:  181:
+        7:  182:    for(i = 1; i<=nr_spatiu_1; i++)
+        2:  182-block  0
+        7:  182-block  1
+branch  0 taken 5
+branch  1 taken 2 (fallthrough)
+        5:  183:        strcat(printare, " ");
+        5:  183-block  0
+        2:  184:    strcat(printare, pointer_oferta->tip);
+        8:  185:    for(i = 1; i<=nr_spatiu_2; i++)
+        2:  185-block  0
+        8:  185-block  1
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        6:  186:        strcat(printare, " ");
+        6:  186-block  0
+        2:  187:    strcat(printare, "|");
+        -:  188:
+        2:  189:    cifre_id = (int)strlen(pointer_oferta->destinatie);
+        2:  190:    cifre_id = 20 - cifre_id;
+        2:  191:    if(cifre_id % 2 == 0){
+        2:  191-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  192:        nr_spatiu_1 = cifre_id/2;
+        1:  193:        nr_spatiu_2 = cifre_id/2;
+        1:  193-block  0
+        -:  194:    } else{
+        1:  195:        nr_spatiu_1 = cifre_id/2;
+        1:  196:        nr_spatiu_2 = nr_spatiu_1 + 1;
+        1:  196-block  0
+        -:  197:    }
+       15:  198:    for(i = 1; i<=nr_spatiu_1; i++)
+        2:  198-block  0
+       15:  198-block  1
+branch  0 taken 13
+branch  1 taken 2 (fallthrough)
+       13:  199:        strcat(printare, " ");
+       13:  199-block  0
+        2:  200:    strcat(printare, pointer_oferta->destinatie);
+       16:  201:    for(i = 1; i<=nr_spatiu_2; i++)
+        2:  201-block  0
+       16:  201-block  1
+branch  0 taken 14
+branch  1 taken 2 (fallthrough)
+       14:  202:        strcat(printare, " ");
+       14:  202-block  0
+        2:  203:    strcat(printare, "|");
+        -:  204:
+        2:  205:    cifre_id = (int)strlen(pointer_oferta->data_plecare);
+        2:  206:    cifre_id = 19 - cifre_id;
+        2:  207:    nr_spatiu_1 = cifre_id/2;
+        2:  208:    nr_spatiu_2 = nr_spatiu_1 + 1;
+       10:  209:    for(i = 1; i<=nr_spatiu_1; i++)
+        2:  209-block  0
+       10:  209-block  1
+branch  0 taken 8
+branch  1 taken 2 (fallthrough)
+        8:  210:        strcat(printare, " ");
+        8:  210-block  0
+        2:  211:    strcat(printare, pointer_oferta->data_plecare);
+       12:  212:    for(i = 1; i<=nr_spatiu_2; i++)
+        2:  212-block  0
+       12:  212-block  1
+branch  0 taken 10
+branch  1 taken 2 (fallthrough)
+       10:  213:        strcat(printare, " ");
+       10:  213-block  0
+        2:  214:    strcat(printare, "|");
+        -:  215:
+        2:  216:    cifre_id = (int)strlen(pret_str);
+        2:  217:    cifre_id = 12 - cifre_id;
+        2:  218:    if(cifre_id % 2 == 0){
+        2:  218-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  219:        nr_spatiu_1 = cifre_id/2;
+        1:  220:        nr_spatiu_2 = cifre_id/2;
+        1:  220-block  0
+        -:  221:    } else{
+        1:  222:        nr_spatiu_1 = cifre_id/2;
+        1:  223:        nr_spatiu_2 = nr_spatiu_1 + 1;
+        1:  223-block  0
+        -:  224:    }
+        7:  225:    for(i = 1; i<=nr_spatiu_1; i++)
+        2:  225-block  0
+        7:  225-block  1
+branch  0 taken 5
+branch  1 taken 2 (fallthrough)
+        5:  226:        strcat(printare, " ");
+        5:  226-block  0
+        2:  227:    strcat(printare, pret_str);
+        8:  228:    for(i = 1; i<=nr_spatiu_2; i++)
+        2:  228-block  0
+        8:  228-block  1
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        6:  229:        strcat(printare, " ");
+        6:  229-block  0
+        2:  230:    strcat(printare, "|\n");
+        2:  231:    return printare;
+        2:  231-block  0
+        -:  232:}
+        -:  233:
+function destructor_oferta called 19 returned 100% blocks executed 100%
+       19:  234:void destructor_oferta(PtrOferta pointer_oferta) {
+       19:  235:    free(pointer_oferta);
+       19:  236:}
+        -:  237:
+        -:  238:

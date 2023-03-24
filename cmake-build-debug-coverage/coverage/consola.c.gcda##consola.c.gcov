@@ -1,0 +1,1469 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/consola/consola.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\consola\consola.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\consola\consola.c.gcda
+        -:    0:Runs:1
+        -:    1:#pragma clang diagnostic push
+        -:    2:#pragma ide diagnostic ignored "bugprone-branch-clone"
+        -:    3://
+        -:    4:// Created by Andrei on 10.03.2023.
+        -:    5://
+        -:    6:
+        -:    7:#include <stdio.h>
+        -:    8:#include <string.h>
+        -:    9:#include <stdlib.h>
+        -:   10:#include "consola.h"
+        -:   11:
+function constructor_consola called 1 returned 100% blocks executed 100%
+        1:   12:PtrConsola constructor_consola(PtrServiceOferte ptr_service)
+        -:   13:/**
+        -:   14: * constructorul unui struct de tip Consola
+        -:   15: * @param ptr_service pointerul catre structul de tip service
+        -:   16: * @return pointer catre consola creata
+        -:   17: */
+        -:   18:{
+        1:   19:    PtrConsola consola_noua = (PtrConsola) malloc(sizeof(Consola));
+        1:   20:    consola_noua->service = ptr_service;
+        1:   21:    return consola_noua;
+        1:   21-block  0
+        -:   22:}
+        -:   23:
+function run called 1 returned 100% blocks executed 48%
+        1:   24:int run(PtrConsola ptr_consola)
+        -:   25:/**
+        -:   26: * functia principala de run care contine loopul infinit si meniul
+        -:   27: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:   28: * @return codul 1 daca totul a fost efectuat cu succes - returneaza doar cand aplicatia esta inchisa
+        -:   29: */
+        -:   30:{
+        1:   31:    printf("Salut,\nBine ai venit la agentia de turism!\n");
+        1:   31-block  0
+call    0 returned 1
+    #####:   32:    while(1){
+    %%%%%:   32-block  0
+        -:   33:        char comanda_brut[10];
+        -:   34:        char comanda;
+        -:   35:        {
+        1:   36:            printf("\n");
+        1:   36-block  0
+call    0 returned 1
+        1:   37:            printf("Selecteaza una dintre optiunile de mai jos:\n");
+call    0 returned 1
+        1:   38:            printf("1. Afisare oferte de calatorie.\n");
+call    0 returned 1
+        1:   39:            printf("2. Afisare numar de oferte de calatorie\n");
+call    0 returned 1
+        1:   40:            printf("3. Adauga oferta de calatorie noua.\n");
+call    0 returned 1
+        1:   41:            printf("4. Modifica oferta de calatorie.\n");
+call    0 returned 1
+        1:   42:            printf("5. Sterge oferta de calatorie.\n");
+call    0 returned 1
+        1:   43:            printf("6. Vizualizare oferte ordonate dupa pret.\n");
+call    0 returned 1
+        1:   44:            printf("7. Vizualizare oferte ordonate dupa destinatie.\n");
+call    0 returned 1
+        1:   45:            printf("8. Vizualizare oferte filtrate.\n");
+call    0 returned 1
+        1:   46:            printf("9. Inchidere aplicatie.\n");
+call    0 returned 1
+        1:   47:            printf("a. Autopopulare.\n");
+call    0 returned 1
+        -:   48:        }
+        1:   49:        printf(">>>");
+call    0 returned 1
+        1:   50:        fflush(stdout);
+call    0 returned 1
+call    1 returned 1
+        1:   51:        fgets(comanda_brut, 5, stdin);
+call    0 returned 1
+call    1 returned 1
+        1:   52:        comanda = comanda_brut[0];
+        1:   53:        switch (comanda) {
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 0
+branch  9 taken 0
+branch 10 taken 1
+branch 11 taken 0
+branch 12 taken 0
+branch 13 taken 0
+    #####:   54:            case '1':
+    #####:   55:                afisare_oferte_consola(ptr_consola);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:                break;
+    #####:   57:            case '2':
+    #####:   58:                afisare_numar_oferte_consola(ptr_consola);
+    %%%%%:   58-block  0
+call    0 never executed
+    #####:   59:                break;
+    #####:   60:            case '3':
+    #####:   61:                adaugare_oferta_consola(ptr_consola);
+    %%%%%:   61-block  0
+call    0 never executed
+    #####:   62:                break;
+    #####:   63:            case '4':
+    #####:   64:                modificare_oferta_consola(ptr_consola);
+    %%%%%:   64-block  0
+call    0 never executed
+    #####:   65:                break;
+    #####:   66:            case '5':
+    #####:   67:                stergere_oferta_consola(ptr_consola);
+    %%%%%:   67-block  0
+call    0 never executed
+    #####:   68:                break;
+    #####:   69:            case '6':
+    #####:   70:                ordonare_oferta_consola(ptr_consola, 1);
+    %%%%%:   70-block  0
+call    0 never executed
+    #####:   71:                break;
+    #####:   72:            case '7':
+    #####:   73:                ordonare_oferta_consola(ptr_consola, 2);
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:                break;
+    #####:   75:            case '8':
+    #####:   76:                filtrare_oferta_consola(ptr_consola);
+    %%%%%:   76-block  0
+call    0 never executed
+    #####:   77:                break;
+    #####:   78:            case 'a':
+    #####:   79:                autopopulare(ptr_consola);
+    %%%%%:   79-block  0
+call    0 never executed
+    #####:   80:                break;
+    #####:   81:            case '\n':
+    #####:   82:                break;
+    %%%%%:   82-block  0
+        1:   83:            case '9':
+        1:   84:                return 0;
+        1:   84-block  0
+        1:   84-block  1
+    #####:   85:            case 'q':
+    #####:   86:                return 1;
+    %%%%%:   86-block  0
+    #####:   87:            case 'Q':
+    #####:   88:                return 1;
+    %%%%%:   88-block  0
+    #####:   89:            default:
+    #####:   90:                printf("Comanda invalida!\n");
+    %%%%%:   90-block  0
+call    0 never executed
+    #####:   91:                break;
+        -:   92:        }
+        -:   93:    }
+        -:   94:}
+        -:   95:
+function destructor_consola called 1 returned 100% blocks executed 100%
+        1:   96:void destructor_consola(PtrConsola ptr_consola)
+        -:   97:/**
+        -:   98: * destructorul consolei
+        -:   99: * @param ptr_consola pointerul catre structul de tip consola care urmeaza sa fie dealocat
+        -:  100: */
+        -:  101:{
+        1:  102:    destructor_service(ptr_consola->service);
+        1:  102-block  0
+call    0 returned 1
+        1:  103:    free(ptr_consola);
+        1:  104:}
+        -:  105:
+function afisare_oferte_consola called 0 returned 0% blocks executed 0%
+    #####:  106:void afisare_oferte_consola(PtrConsola ptr_consola)
+        -:  107:/**
+        -:  108: * functia de printare oferte disponibile (salvate deja)
+        -:  109: * afiseaza un mesaj specific daca nu exista nicio oferta
+        -:  110: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  111: */
+        -:  112:{
+    #####:  113:    if (get_numar_oferte_service(ptr_consola->service) == 0){
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:        printf("Lista de oferte este vida!\n");
+    %%%%%:  114-block  0
+call    0 never executed
+    #####:  115:        return;
+        -:  116:    }
+    #####:  117:    int numar_oferte = get_numar_oferte_service(ptr_consola->service);
+    %%%%%:  117-block  0
+call    0 never executed
+    #####:  118:    printf("+");
+call    0 never executed
+    #####:  119:    for(int j=0; j<8; j++)
+    %%%%%:  119-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  120:        printf("-");
+    %%%%%:  120-block  0
+call    0 never executed
+    #####:  121:    printf("+");
+    %%%%%:  121-block  0
+call    0 never executed
+    #####:  122:    for(int j=0; j<13; j++)
+    %%%%%:  122-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  123:        printf("-");
+    %%%%%:  123-block  0
+call    0 never executed
+    #####:  124:    printf("+");
+    %%%%%:  124-block  0
+call    0 never executed
+    #####:  125:    for(int j=0; j<20; j++)
+    %%%%%:  125-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  126:        printf("-");
+    %%%%%:  126-block  0
+call    0 never executed
+    #####:  127:    printf("+");
+    %%%%%:  127-block  0
+call    0 never executed
+    #####:  128:    for(int j=0; j<19; j++)
+    %%%%%:  128-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  129:        printf("-");
+    %%%%%:  129-block  0
+call    0 never executed
+    #####:  130:    printf("+");
+    %%%%%:  130-block  0
+call    0 never executed
+    #####:  131:    for(int j=0; j<12; j++)
+    %%%%%:  131-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  132:        printf("-");
+    %%%%%:  132-block  0
+call    0 never executed
+    #####:  133:    printf("+");
+    %%%%%:  133-block  0
+call    0 never executed
+    #####:  134:    printf("\n");
+call    0 never executed
+    #####:  135:    printf("|");
+call    0 never executed
+    #####:  136:    for(int j=0; j<3; j++)
+    %%%%%:  136-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  137:        printf(" ");
+    %%%%%:  137-block  0
+call    0 never executed
+    #####:  138:    printf("ID");
+    %%%%%:  138-block  0
+call    0 never executed
+    #####:  139:    for(int j=0; j<3; j++)
+    %%%%%:  139-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  140:        printf(" ");
+    %%%%%:  140-block  0
+call    0 never executed
+    #####:  141:    printf("|");
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:    for(int j=0; j<5; j++)
+    %%%%%:  142-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  143:        printf(" ");
+    %%%%%:  143-block  0
+call    0 never executed
+    #####:  144:    printf("TIP");
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:    for(int j=0; j<5; j++)
+    %%%%%:  145-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  146:        printf(" ");
+    %%%%%:  146-block  0
+call    0 never executed
+    #####:  147:    printf("|");
+    %%%%%:  147-block  0
+call    0 never executed
+    #####:  148:    for(int j=0; j<5; j++)
+    %%%%%:  148-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  149:        printf(" ");
+    %%%%%:  149-block  0
+call    0 never executed
+    #####:  150:    printf("DESTINATIE");
+    %%%%%:  150-block  0
+call    0 never executed
+    #####:  151:    for(int j=0; j<5; j++)
+    %%%%%:  151-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  152:        printf(" ");
+    %%%%%:  152-block  0
+call    0 never executed
+    #####:  153:    printf("|");
+    %%%%%:  153-block  0
+call    0 never executed
+    #####:  154:    for(int j=0; j<2; j++)
+    %%%%%:  154-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  155:        printf(" ");
+    %%%%%:  155-block  0
+call    0 never executed
+    #####:  156:    printf("DATA DE PLECARE");
+    %%%%%:  156-block  0
+call    0 never executed
+    #####:  157:    for(int j=0; j<2; j++)
+    %%%%%:  157-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  158:        printf(" ");
+    %%%%%:  158-block  0
+call    0 never executed
+    #####:  159:    printf("|");
+    %%%%%:  159-block  0
+call    0 never executed
+    #####:  160:    for(int j=0; j<3; j++)
+    %%%%%:  160-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  161:        printf(" ");
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:    printf("PRETUL");
+    %%%%%:  162-block  0
+call    0 never executed
+    #####:  163:    for(int j=0; j<3; j++)
+    %%%%%:  163-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  164:        printf(" ");
+    %%%%%:  164-block  0
+call    0 never executed
+    #####:  165:    printf("|\n");
+    %%%%%:  165-block  0
+call    0 never executed
+    #####:  166:    printf("+");
+call    0 never executed
+    #####:  167:    for(int j=0; j<8; j++)
+    %%%%%:  167-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  168:        printf("-");
+    %%%%%:  168-block  0
+call    0 never executed
+    #####:  169:    printf("+");
+    %%%%%:  169-block  0
+call    0 never executed
+    #####:  170:    for(int j=0; j<13; j++)
+    %%%%%:  170-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  171:        printf("-");
+    %%%%%:  171-block  0
+call    0 never executed
+    #####:  172:    printf("+");
+    %%%%%:  172-block  0
+call    0 never executed
+    #####:  173:    for(int j=0; j<20; j++)
+    %%%%%:  173-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  174:        printf("-");
+    %%%%%:  174-block  0
+call    0 never executed
+    #####:  175:    printf("+");
+    %%%%%:  175-block  0
+call    0 never executed
+    #####:  176:    for(int j=0; j<19; j++)
+    %%%%%:  176-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  177:        printf("-");
+    %%%%%:  177-block  0
+call    0 never executed
+    #####:  178:    printf("+");
+    %%%%%:  178-block  0
+call    0 never executed
+    #####:  179:    for(int j=0; j<12; j++)
+    %%%%%:  179-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  180:        printf("-");
+    %%%%%:  180-block  0
+call    0 never executed
+    #####:  181:    printf("+");
+    %%%%%:  181-block  0
+call    0 never executed
+    #####:  182:    printf("\n");
+call    0 never executed
+        -:  183:    // pentru ID am 8
+        -:  184:    // pnetru TIP am 13
+        -:  185:    // pentru Destinatie am 20
+        -:  186:    // pentru Data de plecare am 19
+        -:  187:    // pentru pret am 12
+    #####:  188:    for(int i = 0; i<numar_oferte; i++)
+    %%%%%:  188-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  189:    {
+        -:  190:        char* afisarea_ofertei;
+    #####:  191:        afisarea_ofertei = afisare_oferta(get_lista_oferte_service(ptr_consola->service)[i]);
+    %%%%%:  191-block  0
+call    0 never executed
+call    1 never executed
+    #####:  192:        printf("%s", afisarea_ofertei);
+call    0 never executed
+    #####:  193:        free(afisarea_ofertei);
+    #####:  194:        printf("+");
+call    0 never executed
+    #####:  195:        for(int j=0; j<8; j++)
+    %%%%%:  195-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  196:            printf("-");
+    %%%%%:  196-block  0
+call    0 never executed
+    #####:  197:        printf("+");
+    %%%%%:  197-block  0
+call    0 never executed
+    #####:  198:        for(int j=0; j<13; j++)
+    %%%%%:  198-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  199:            printf("-");
+    %%%%%:  199-block  0
+call    0 never executed
+    #####:  200:        printf("+");
+    %%%%%:  200-block  0
+call    0 never executed
+    #####:  201:        for(int j=0; j<20; j++)
+    %%%%%:  201-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  202:            printf("-");
+    %%%%%:  202-block  0
+call    0 never executed
+    #####:  203:        printf("+");
+    %%%%%:  203-block  0
+call    0 never executed
+    #####:  204:        for(int j=0; j<19; j++)
+    %%%%%:  204-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  205:            printf("-");
+    %%%%%:  205-block  0
+call    0 never executed
+    #####:  206:        printf("+");
+    %%%%%:  206-block  0
+call    0 never executed
+    #####:  207:        for(int j=0; j<12; j++)
+    %%%%%:  207-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  208:            printf("-");
+    %%%%%:  208-block  0
+call    0 never executed
+    #####:  209:        printf("+");
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:        printf("\n");
+call    0 never executed
+        -:  211:    }
+        -:  212:}
+        -:  213:
+function copiere_buffer called 0 returned 0% blocks executed 0%
+    #####:  214:void copiere_buffer(char buff[], char dest[])
+        -:  215:/**
+        -:  216: * functia de copiere si 'strip' al bufferului citit in alt string destinatie
+        -:  217: * @param buff string - buffer
+        -:  218: * @param dest string - buff 'strip-uit' - fara caracterele '\n' si ' ' de la final
+        -:  219: */
+        -:  220:{
+    #####:  221:    int j = 0;
+    #####:  222:    unsigned long i = strlen(buff) - 1;
+        -:  223:    unsigned long k;
+    #####:  224:    int ok = 1;
+    #####:  225:    while(i > 0 && ok){
+    %%%%%:  225-block  0
+    %%%%%:  225-block  1
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  225-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:  226:        if(buff[i] == '\n' || buff[i] == ' '){
+    %%%%%:  226-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  226-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  227:            i--;
+    %%%%%:  227-block  0
+        -:  228:        }
+        -:  229:        else{
+    #####:  230:            ok = 0;
+    %%%%%:  230-block  0
+        -:  231:        }
+        -:  232:    }
+    #####:  233:    k = i;
+    #####:  234:    for(i = 0; i <= k; i++){
+    %%%%%:  234-block  0
+    %%%%%:  234-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  235:        dest[j] = buff[i];
+    #####:  236:        j++;
+    %%%%%:  236-block  0
+        -:  237:    }
+    #####:  238:    dest[j] = '\0';
+    #####:  239:}
+        -:  240:
+function nr_cifre called 0 returned 0% blocks executed 0%
+    #####:  241:int nr_cifre(long n)
+        -:  242:/**
+        -:  243: * afla numarul de cifre ale nr-ul n primit
+        -:  244: * @param n numar intreg
+        -:  245: * @return numarul de cifre
+        -:  246: */
+        -:  247:{
+    #####:  248:    int i = 0;
+    #####:  249:    while(n > 0){
+    %%%%%:  249-block  0
+    %%%%%:  249-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  250:        i++;
+    #####:  251:        n/=10;
+    %%%%%:  251-block  0
+        -:  252:    }
+    #####:  253:    return i;
+    %%%%%:  253-block  0
+        -:  254:}
+        -:  255:
+function adaugare_oferta_consola called 0 returned 0% blocks executed 0%
+    #####:  256:void adaugare_oferta_consola(PtrConsola ptr_consola)
+        -:  257:/**
+        -:  258: * functia de adaugare de oferta noua
+        -:  259: * citeste tot ce are nevoie pentru a crea un struct de tip oferta
+        -:  260: * returneaza mesaje specifice in caz de succes sau insucces, impreuna cu ceea ce a provocat eroarea
+        -:  261: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  262: */
+        -:  263:{
+        -:  264:    char buffer[30];
+        -:  265:    int id_oferta;
+        -:  266:    char tip[20];
+        -:  267:    char destinatie[30];
+        -:  268:    char data_plecare[15];
+        -:  269:    double pret;
+        -:  270:    char interm[20];
+        -:  271:    int cod_eroare;
+    #####:  272:    printf("ID:");
+    %%%%%:  272-block  0
+call    0 never executed
+    #####:  273:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  274:    fgets(buffer, 10, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  275:    copiere_buffer(buffer, interm);
+call    0 never executed
+    #####:  276:    id_oferta = (int)strtol(interm, NULL, 10);
+call    0 never executed
+        -:  277:    //id_oferta = atoi(interm);   // totusi mai bine cu transformare =))
+    #####:  278:    if(nr_cifre(id_oferta) != strlen(interm)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  279:        id_oferta = -1;
+    %%%%%:  279-block  0
+        -:  280:    }
+    #####:  281:    printf("Tipul(Mare/Munte/City Break):");
+    %%%%%:  281-block  0
+call    0 never executed
+    #####:  282:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  283:    fgets(buffer, 20, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  284:    copiere_buffer(buffer, tip);
+call    0 never executed
+    #####:  285:    printf("Destinatie:");
+call    0 never executed
+    #####:  286:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  287:    fgets(buffer, 20, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  288:    copiere_buffer(buffer, destinatie);
+call    0 never executed
+    #####:  289:    printf("Data in format <zz/ll/aaaa>:");
+call    0 never executed
+    #####:  290:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  291:    fgets(buffer, 15, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  292:    copiere_buffer(buffer, data_plecare);
+call    0 never executed
+    #####:  293:    printf("Pretul ofertei:");
+call    0 never executed
+    #####:  294:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  295:    fgets(buffer, 10, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  296:    pret = strtod(buffer, NULL);
+call    0 never executed
+        -:  297:    //pret = atof(buffer);
+    #####:  298:    cod_eroare = adauga_oferta_service(ptr_consola->service,id_oferta, tip, destinatie, data_plecare, pret);
+call    0 never executed
+    #####:  299:    if(cod_eroare == 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  300:        printf("Oferta adaugata cu succes!\n");
+    %%%%%:  300-block  0
+call    0 never executed
+        -:  301:        //fflush(stdout);
+    #####:  302:        return;
+    %%%%%:  302-block  0
+        -:  303:    }
+    #####:  304:    if(cod_eroare == 2){
+    %%%%%:  304-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  305:        printf("Oferta deja prezenta in repository!\n");
+    %%%%%:  305-block  0
+call    0 never executed
+    #####:  306:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  307:        return;
+        -:  308:    }
+    #####:  309:    if(cod_eroare / 10000 == 1){
+    %%%%%:  309-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  310:        printf("ID-ul este invalid!\n");
+    %%%%%:  310-block  0
+call    0 never executed
+    #####:  311:        cod_eroare = cod_eroare - 10000;
+        -:  312:    }
+    #####:  313:    if(cod_eroare / 1000 == 1){
+    %%%%%:  313-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  314:        printf("Tip oferta invalid!\n");
+    %%%%%:  314-block  0
+call    0 never executed
+    #####:  315:        cod_eroare = cod_eroare - 1000;
+        -:  316:    }
+    #####:  317:    if(cod_eroare / 100 == 1){
+    %%%%%:  317-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  318:        printf("Destinatie invalida!\n");
+    %%%%%:  318-block  0
+call    0 never executed
+    #####:  319:        cod_eroare = cod_eroare - 100;
+        -:  320:    }
+    #####:  321:    if(cod_eroare / 10 == 1){
+    %%%%%:  321-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  322:        printf("Data de plecare este invalida!\n");
+    %%%%%:  322-block  0
+call    0 never executed
+    #####:  323:        cod_eroare = cod_eroare - 10;
+        -:  324:    }
+    #####:  325:    if(cod_eroare == 1){
+    %%%%%:  325-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  326:        printf("Pretul este invalid!\n");
+    %%%%%:  326-block  0
+call    0 never executed
+        -:  327:    }
+    #####:  328:    fflush(stdout);
+    %%%%%:  328-block  0
+call    0 never executed
+call    1 never executed
+        -:  329:}
+        -:  330:
+function stergere_oferta_consola called 0 returned 0% blocks executed 0%
+    #####:  331:void stergere_oferta_consola(PtrConsola ptr_consola)
+        -:  332:/**
+        -:  333: * functia de adaugare de oferta noua
+        -:  334: * citeste tot ce are nevoie pentru a sterge un struct de tip oferta
+        -:  335: * returneaza mesaje specifice in caz de succes sau insucces, impreuna cu ceea ce a provocat eroarea
+        -:  336: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  337: */
+        -:  338:{
+        -:  339:    char buffer[30];
+        -:  340:    int id_oferta;
+        -:  341:    char interm[20];
+        -:  342:    int cod_eroare;
+    #####:  343:    printf("Introduceti ID-ul ofertei:");
+    %%%%%:  343-block  0
+call    0 never executed
+    #####:  344:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  345:    fgets(buffer, 10, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  346:    copiere_buffer(buffer, interm);
+call    0 never executed
+        -:  347:    //id_oferta = atoi(interm);   // totusi mai bine cu transformare =))
+    #####:  348:    id_oferta = (int)strtol(interm, NULL, 10);
+call    0 never executed
+    #####:  349:    if(nr_cifre(id_oferta) != strlen(interm)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  350:        id_oferta = -1;
+    %%%%%:  350-block  0
+        -:  351:    }
+    #####:  352:    cod_eroare = sterge_oferta_service(ptr_consola->service, id_oferta);
+    %%%%%:  352-block  0
+call    0 never executed
+    #####:  353:    if(cod_eroare == 2){
+branch  0 never executed
+branch  1 never executed
+    #####:  354:        printf("Nu exista nicio oferta cu acest ID!\n");
+    %%%%%:  354-block  0
+call    0 never executed
+    #####:  355:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  356:        return;
+    %%%%%:  356-block  0
+        -:  357:    }
+    #####:  358:    if(cod_eroare == 0){
+    %%%%%:  358-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  359:        printf("ID invalid!\n");
+    %%%%%:  359-block  0
+call    0 never executed
+    #####:  360:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  361:        return;
+        -:  362:    }
+    #####:  363:    printf("Oferta stersa cu succes!\n");
+    %%%%%:  363-block  0
+call    0 never executed
+    #####:  364:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+        -:  365:}
+        -:  366:
+function afisare_numar_oferte_consola called 0 returned 0% blocks executed 0%
+    #####:  367:void afisare_numar_oferte_consola(PtrConsola ptr_consola)
+        -:  368:/**
+        -:  369: * functia de afisare al numarului de oferte din memorie
+        -:  370: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  371: */
+        -:  372:{
+        -:  373:    int numar_oferte;
+    #####:  374:    numar_oferte = get_numar_oferte_service(ptr_consola->service);
+    %%%%%:  374-block  0
+call    0 never executed
+    #####:  375:    printf("Numarul de oferte este: %d\n", numar_oferte);
+call    0 never executed
+    #####:  376:}
+        -:  377:
+function modificare_oferta_consola called 0 returned 0% blocks executed 0%
+    #####:  378:void modificare_oferta_consola(PtrConsola ptr_consola)
+        -:  379:/**
+        -:  380: * functia de modificare a unui struct de tip oferta aflat deja in memorie
+        -:  381: * citeste tot ce are nevoie pentru a modifica un struct de tip oferta
+        -:  382: * returneaza mesaje specifice in caz de succes sau insucces, impreuna cu ceea ce a provocat eroarea
+        -:  383: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  384: */
+        -:  385:{
+        -:  386:    char buffer[30];
+        -:  387:    int id_oferta;
+        -:  388:    char tip[20];
+        -:  389:    char destinatie[30];
+        -:  390:    char data_plecare[15];
+        -:  391:    double pret;
+        -:  392:    char interm[20];
+        -:  393:    int cod_eroare;
+    #####:  394:    printf("Introduceti ID-ul ofertei:");
+    %%%%%:  394-block  0
+call    0 never executed
+    #####:  395:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  396:    fgets(buffer, 10, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  397:    copiere_buffer(buffer, interm);
+call    0 never executed
+    #####:  398:    id_oferta = (int)strtol(interm, NULL, 10);
+call    0 never executed
+        -:  399:    //id_oferta = atoi(interm);   // totusi mai bine cu transformare =))
+    #####:  400:    if(nr_cifre(id_oferta) != strlen(interm)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  401:        id_oferta = -1;
+    %%%%%:  401-block  0
+        -:  402:    }
+    #####:  403:    printf("Daca nu doriti sa modificati respectivul aspect apasati 'Enter'\n");
+    %%%%%:  403-block  0
+call    0 never executed
+    #####:  404:    printf("Tipul (Mare/Munte/City Break):");
+call    0 never executed
+    #####:  405:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  406:    fgets(buffer, 20, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  407:    copiere_buffer(buffer, tip);
+call    0 never executed
+    #####:  408:    printf("Destinatia:");
+call    0 never executed
+    #####:  409:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  410:    fgets(buffer, 20, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  411:    copiere_buffer(buffer, destinatie);
+call    0 never executed
+    #####:  412:    printf("Data in format <zz/ll/aaaa>:");
+call    0 never executed
+    #####:  413:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  414:    fgets(buffer, 15, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  415:    copiere_buffer(buffer, data_plecare);
+call    0 never executed
+    #####:  416:    printf("Pretul ofertei:");
+call    0 never executed
+    #####:  417:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  418:    fgets(buffer, 10, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  419:    pret = strtod(buffer, NULL);
+call    0 never executed
+        -:  420:    //pret = atof(buffer);
+    #####:  421:    cod_eroare = modifica_oferta_service(ptr_consola->service,id_oferta, tip, destinatie, data_plecare, pret);
+call    0 never executed
+    #####:  422:    if(cod_eroare == 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  423:        printf("Oferta modificata cu succes!\n");
+    %%%%%:  423-block  0
+call    0 never executed
+    #####:  424:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  425:        return;
+    %%%%%:  425-block  0
+        -:  426:    }
+    #####:  427:    if(cod_eroare == 2){
+    %%%%%:  427-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  428:        printf("Oferta nu este prezenta in repository!\n");
+    %%%%%:  428-block  0
+call    0 never executed
+    #####:  429:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  430:        return;
+        -:  431:    }
+    #####:  432:    if(cod_eroare / 10000 == 1){
+    %%%%%:  432-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  433:        printf("ID-ul este invalid!\n");
+    %%%%%:  433-block  0
+call    0 never executed
+    #####:  434:        cod_eroare = cod_eroare - 10000;
+        -:  435:    }
+    #####:  436:    if(cod_eroare / 1000 == 1){
+    %%%%%:  436-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  437:        printf("Tip oferta invalid!\n");
+    %%%%%:  437-block  0
+call    0 never executed
+    #####:  438:        cod_eroare = cod_eroare - 1000;
+        -:  439:    }
+    #####:  440:    if(cod_eroare / 100 == 1){
+    %%%%%:  440-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  441:        printf("Destinatie invalida!\n");
+    %%%%%:  441-block  0
+call    0 never executed
+    #####:  442:        cod_eroare = cod_eroare - 100;
+        -:  443:    }
+    #####:  444:    if(cod_eroare / 10 == 1){
+    %%%%%:  444-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  445:        printf("Data de plecare este invalida!\n");
+    %%%%%:  445-block  0
+call    0 never executed
+    #####:  446:        cod_eroare = cod_eroare - 10;
+        -:  447:    }
+    #####:  448:    if(cod_eroare == 1){
+    %%%%%:  448-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  449:        printf("Pretul este invalid!\n");
+    %%%%%:  449-block  0
+call    0 never executed
+        -:  450:    }
+    #####:  451:    fflush(stdout);
+    %%%%%:  451-block  0
+call    0 never executed
+call    1 never executed
+        -:  452:}
+        -:  453:
+function ordonare_oferta_consola called 0 returned 0% blocks executed 0%
+    #####:  454:void ordonare_oferta_consola(PtrConsola ptr_consola, int optiune)
+        -:  455:/**
+        -:  456: * functia de ordonare a ofertelor din memorie in functie de anumite criterii
+        -:  457: * dupa ordonare, afiseaza toate ofertele disponibile
+        -:  458: * sunt disponibile atat sortari in ordine crescatoare, cat si in ordine descrescatoare,
+        -:  459: * in functie de ceea ce se citeste dupa promt + / -
+        -:  460: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  461: * @param optiune intreg care reprezinta criteriul dupa care se face sortarea
+        -:  462: *          optiune = 1 => dupa pret
+        -:  463: *          optiune = 2 => dupa destinatie
+        -:  464: */
+        -:  465:{
+        -:  466:    char ordine;
+        -:  467:    char altcv[20];
+    #####:  468:    if(optiune == 1){
+    %%%%%:  468-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  469:        printf("Introdu modul in care sa fie ordonate(+ pentru crescator sau - pentru descrescator:");
+    %%%%%:  469-block  0
+call    0 never executed
+    #####:  470:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  471:        scanf("%c", &ordine);
+call    0 never executed
+    #####:  472:        printf("\n");
+call    0 never executed
+    #####:  473:        fgets(altcv, 14, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  474:        if(ordine == '+')
+branch  0 never executed
+branch  1 never executed
+    #####:  475:            sortare_oferte_service(ptr_consola->service,optiune, ordine);
+    %%%%%:  475-block  0
+call    0 never executed
+    #####:  476:        else if(ordine == '-')
+    %%%%%:  476-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  477:            sortare_oferte_service(ptr_consola->service,optiune, ordine);
+    %%%%%:  477-block  0
+call    0 never executed
+        -:  478:        else{
+    #####:  479:            printf("Nu ai selectat un mod posibil!\n");
+    %%%%%:  479-block  0
+call    0 never executed
+    #####:  480:            return;
+    %%%%%:  480-block  0
+        -:  481:        }
+        -:  482:    }
+        -:  483:    else{
+    #####:  484:        printf("Introdu modul in care sa fie ordonate(+ pentru crescator sau - pentru descrescator:");
+    %%%%%:  484-block  0
+call    0 never executed
+    #####:  485:        fflush(stdout);
+call    0 never executed
+call    1 never executed
+    #####:  486:        scanf("%c", &ordine);
+call    0 never executed
+    #####:  487:        fgets(altcv, 14, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  488:        printf("\n");
+call    0 never executed
+    #####:  489:        if(ordine == '+')
+branch  0 never executed
+branch  1 never executed
+    #####:  490:            sortare_oferte_service(ptr_consola->service,optiune, ordine);
+    %%%%%:  490-block  0
+call    0 never executed
+    #####:  491:        else if(ordine == '-')
+    %%%%%:  491-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  492:            sortare_oferte_service(ptr_consola->service,optiune, ordine);
+    %%%%%:  492-block  0
+call    0 never executed
+        -:  493:        else{
+    #####:  494:            printf("Nu ai selectat un mod posibil!\n");
+    %%%%%:  494-block  0
+call    0 never executed
+    #####:  495:            return;
+        -:  496:        }
+        -:  497:    }
+    #####:  498:    afisare_oferte_consola(ptr_consola);
+    %%%%%:  498-block  0
+call    0 never executed
+    #####:  499:    fflush(stdout);
+call    0 never executed
+call    1 never executed
+        -:  500:}
+        -:  501:
+function filtrare_oferta_consola called 0 returned 0% blocks executed 0%
+    #####:  502:void filtrare_oferta_consola(PtrConsola ptr_consola)
+        -:  503:/**
+        -:  504: * functia de filtrare a ofertelor din memorie in functie de anumite criterii
+        -:  505: * toate se citesc de la tastatura urmand ceea ce se cere
+        -:  506: * dupa, se afiseaza ofertele ramase
+        -:  507: * in caz de erori, se vor afisa mesaje specifice
+        -:  508: * @param ptr_consola pointer spre structul de tip consola cu care se lucreaza
+        -:  509: */
+        -:  510:{
+    #####:  511:    printf("Selecteaza criteriul dupa care se va face filtrarea:\n");
+    %%%%%:  511-block  0
+call    0 never executed
+    #####:  512:    printf("destinatie/tip/pret:");
+call    0 never executed
+        -:  513:    PtrOferta *array_final;
+        -:  514:    char buffer[25];
+    #####:  515:    char ordine = 0;
+        -:  516:    char optiune[20];
+    #####:  517:    optiune[0] = '\0';
+        -:  518:    char string[20];
+    #####:  519:    string[0] = '\0';
+    #####:  520:    double pret = 0;
+        -:  521:    int nr_elemente;
+        -:  522:    int lungime_finala;
+    #####:  523:    fgets(buffer, 18, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  524:    copiere_buffer(buffer, optiune);
+call    0 never executed
+    #####:  525:    if(strcmp(optiune, "destinatie") == 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  526:        printf("Introdu destinatia dupa care sa cautam oferte:");
+    %%%%%:  526-block  0
+call    0 never executed
+    #####:  527:        fgets(buffer, 25, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  528:        copiere_buffer(buffer, string);
+call    0 never executed
+    #####:  529:        if(strlen(string) < 2){
+branch  0 never executed
+branch  1 never executed
+    #####:  530:            printf("Destinatie invalida!\n");
+    %%%%%:  530-block  0
+call    0 never executed
+    #####:  531:            return;
+    %%%%%:  531-block  0
+        -:  532:        }
+        -:  533:    }
+    #####:  534:    else if(strcmp(optiune, "tip") == 0){
+    %%%%%:  534-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  535:        printf("Introdu tipul dupa care sa cautam oferte:");
+    %%%%%:  535-block  0
+call    0 never executed
+    #####:  536:        fgets(buffer, 25, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  537:        copiere_buffer(buffer, string);
+call    0 never executed
+    #####:  538:        if(strlen(string) < 2){
+branch  0 never executed
+branch  1 never executed
+    #####:  539:            printf("Tip invalid!\n");
+    %%%%%:  539-block  0
+call    0 never executed
+    #####:  540:            return;
+        -:  541:        }
+        -:  542:    }
+    #####:  543:    else if(strcmp(optiune, "pret") == 0){
+    %%%%%:  543-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  544:        printf("Introdu pretul dupa care sa cautam oferte:");
+    %%%%%:  544-block  0
+call    0 never executed
+    #####:  545:        fgets(buffer, 25, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  546:        copiere_buffer(buffer, string);
+call    0 never executed
+    #####:  547:        pret = strtod(string, NULL);
+call    0 never executed
+        -:  548:        //pret = atof(string);
+    #####:  549:        if(pret <= 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  550:            printf("Pret invalid!\n");
+    %%%%%:  550-block  0
+call    0 never executed
+    #####:  551:            return;
+        -:  552:        }
+    #####:  553:        printf("Introdu '+' daca vrei oferte cu pretul mai mare sau egal cu cel introdus\n");
+    %%%%%:  553-block  0
+call    0 never executed
+    #####:  554:        printf("Sau '-' daca vrei oferte cu pretul mai mic sau egal cu cel introdus\n");
+call    0 never executed
+    #####:  555:        fgets(buffer, 5, stdin);
+call    0 never executed
+call    1 never executed
+    #####:  556:        ordine = buffer[0];
+    #####:  557:        if(!(ordine == '+' || ordine == '-')){
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  557-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  558:            printf("Nu ai introdus o optiune posibila!\n");
+    %%%%%:  558-block  0
+call    0 never executed
+    #####:  559:            return;
+        -:  560:        }
+        -:  561:    }
+        -:  562:    else{
+    #####:  563:        printf("Nu ai introdus o optiune posibila!\n");
+    %%%%%:  563-block  0
+call    0 never executed
+    #####:  564:        return;
+        -:  565:    }
+    #####:  566:    array_final = filtrare_oferte_service(ptr_consola->service, &lungime_finala, optiune, string, pret, ordine);
+    %%%%%:  566-block  0
+call    0 never executed
+    #####:  567:    nr_elemente = lungime_finala;
+    #####:  568:    if(nr_elemente == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  569:    {
+    #####:  570:        printf("Nu a ramas nicio oferta disponibila!\n");
+    %%%%%:  570-block  0
+call    0 never executed
+    #####:  571:        return;
+        -:  572:    }
+    #####:  573:    printf("Ofertele sunt:\n");
+    %%%%%:  573-block  0
+call    0 never executed
+    #####:  574:    printf("+");
+call    0 never executed
+    #####:  575:    for(int j=0; j<8; j++)
+    %%%%%:  575-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  576:        printf("-");
+    %%%%%:  576-block  0
+call    0 never executed
+    #####:  577:    printf("+");
+    %%%%%:  577-block  0
+call    0 never executed
+    #####:  578:    for(int j=0; j<13; j++)
+    %%%%%:  578-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  579:        printf("-");
+    %%%%%:  579-block  0
+call    0 never executed
+    #####:  580:    printf("+");
+    %%%%%:  580-block  0
+call    0 never executed
+    #####:  581:    for(int j=0; j<20; j++)
+    %%%%%:  581-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  582:        printf("-");
+    %%%%%:  582-block  0
+call    0 never executed
+    #####:  583:    printf("+");
+    %%%%%:  583-block  0
+call    0 never executed
+    #####:  584:    for(int j=0; j<19; j++)
+    %%%%%:  584-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  585:        printf("-");
+    %%%%%:  585-block  0
+call    0 never executed
+    #####:  586:    printf("+");
+    %%%%%:  586-block  0
+call    0 never executed
+    #####:  587:    for(int j=0; j<12; j++)
+    %%%%%:  587-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  588:        printf("-");
+    %%%%%:  588-block  0
+call    0 never executed
+    #####:  589:    printf("+");
+    %%%%%:  589-block  0
+call    0 never executed
+    #####:  590:    printf("\n");
+call    0 never executed
+    #####:  591:    printf("|");
+call    0 never executed
+    #####:  592:    for(int j=0; j<3; j++)
+    %%%%%:  592-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  593:        printf(" ");
+    %%%%%:  593-block  0
+call    0 never executed
+    #####:  594:    printf("ID");
+    %%%%%:  594-block  0
+call    0 never executed
+    #####:  595:    for(int j=0; j<3; j++)
+    %%%%%:  595-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  596:        printf(" ");
+    %%%%%:  596-block  0
+call    0 never executed
+    #####:  597:    printf("|");
+    %%%%%:  597-block  0
+call    0 never executed
+    #####:  598:    for(int j=0; j<5; j++)
+    %%%%%:  598-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  599:        printf(" ");
+    %%%%%:  599-block  0
+call    0 never executed
+    #####:  600:    printf("TIP");
+    %%%%%:  600-block  0
+call    0 never executed
+    #####:  601:    for(int j=0; j<5; j++)
+    %%%%%:  601-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  602:        printf(" ");
+    %%%%%:  602-block  0
+call    0 never executed
+    #####:  603:    printf("|");
+    %%%%%:  603-block  0
+call    0 never executed
+    #####:  604:    for(int j=0; j<5; j++)
+    %%%%%:  604-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  605:        printf(" ");
+    %%%%%:  605-block  0
+call    0 never executed
+    #####:  606:    printf("DESTINATIE");
+    %%%%%:  606-block  0
+call    0 never executed
+    #####:  607:    for(int j=0; j<5; j++)
+    %%%%%:  607-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  608:        printf(" ");
+    %%%%%:  608-block  0
+call    0 never executed
+    #####:  609:    printf("|");
+    %%%%%:  609-block  0
+call    0 never executed
+    #####:  610:    for(int j=0; j<2; j++)
+    %%%%%:  610-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  611:        printf(" ");
+    %%%%%:  611-block  0
+call    0 never executed
+    #####:  612:    printf("DATA DE PLECARE");
+    %%%%%:  612-block  0
+call    0 never executed
+    #####:  613:    for(int j=0; j<2; j++)
+    %%%%%:  613-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  614:        printf(" ");
+    %%%%%:  614-block  0
+call    0 never executed
+    #####:  615:    printf("|");
+    %%%%%:  615-block  0
+call    0 never executed
+    #####:  616:    for(int j=0; j<3; j++)
+    %%%%%:  616-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  617:        printf(" ");
+    %%%%%:  617-block  0
+call    0 never executed
+    #####:  618:    printf("PRETUL");
+    %%%%%:  618-block  0
+call    0 never executed
+    #####:  619:    for(int j=0; j<3; j++)
+    %%%%%:  619-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  620:        printf(" ");
+    %%%%%:  620-block  0
+call    0 never executed
+    #####:  621:    printf("|\n");
+    %%%%%:  621-block  0
+call    0 never executed
+    #####:  622:    printf("+");
+call    0 never executed
+    #####:  623:    for(int j=0; j<8; j++)
+    %%%%%:  623-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  624:        printf("-");
+    %%%%%:  624-block  0
+call    0 never executed
+    #####:  625:    printf("+");
+    %%%%%:  625-block  0
+call    0 never executed
+    #####:  626:    for(int j=0; j<13; j++)
+    %%%%%:  626-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  627:        printf("-");
+    %%%%%:  627-block  0
+call    0 never executed
+    #####:  628:    printf("+");
+    %%%%%:  628-block  0
+call    0 never executed
+    #####:  629:    for(int j=0; j<20; j++)
+    %%%%%:  629-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  630:        printf("-");
+    %%%%%:  630-block  0
+call    0 never executed
+    #####:  631:    printf("+");
+    %%%%%:  631-block  0
+call    0 never executed
+    #####:  632:    for(int j=0; j<19; j++)
+    %%%%%:  632-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  633:        printf("-");
+    %%%%%:  633-block  0
+call    0 never executed
+    #####:  634:    printf("+");
+    %%%%%:  634-block  0
+call    0 never executed
+    #####:  635:    for(int j=0; j<12; j++)
+    %%%%%:  635-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  636:        printf("-");
+    %%%%%:  636-block  0
+call    0 never executed
+    #####:  637:    printf("+");
+    %%%%%:  637-block  0
+call    0 never executed
+    #####:  638:    printf("\n");
+call    0 never executed
+    #####:  639:    for(int i = 0; i<nr_elemente; i++){
+    %%%%%:  639-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  640:        char* afisarea_ofertei;
+    #####:  641:        afisarea_ofertei = afisare_oferta(array_final[i]);
+    %%%%%:  641-block  0
+call    0 never executed
+    #####:  642:        printf("%s", afisarea_ofertei);
+call    0 never executed
+    #####:  643:        free(afisarea_ofertei);
+    #####:  644:        printf("+");
+call    0 never executed
+    #####:  645:        for(int j=0; j<8; j++)
+    %%%%%:  645-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  646:            printf("-");
+    %%%%%:  646-block  0
+call    0 never executed
+    #####:  647:        printf("+");
+    %%%%%:  647-block  0
+call    0 never executed
+    #####:  648:        for(int j=0; j<13; j++)
+    %%%%%:  648-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  649:            printf("-");
+    %%%%%:  649-block  0
+call    0 never executed
+    #####:  650:        printf("+");
+    %%%%%:  650-block  0
+call    0 never executed
+    #####:  651:        for(int j=0; j<20; j++)
+    %%%%%:  651-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  652:            printf("-");
+    %%%%%:  652-block  0
+call    0 never executed
+    #####:  653:        printf("+");
+    %%%%%:  653-block  0
+call    0 never executed
+    #####:  654:        for(int j=0; j<19; j++)
+    %%%%%:  654-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  655:            printf("-");
+    %%%%%:  655-block  0
+call    0 never executed
+    #####:  656:        printf("+");
+    %%%%%:  656-block  0
+call    0 never executed
+    #####:  657:        for(int j=0; j<12; j++)
+    %%%%%:  657-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  658:            printf("-");
+    %%%%%:  658-block  0
+call    0 never executed
+    #####:  659:        printf("+");
+    %%%%%:  659-block  0
+call    0 never executed
+    #####:  660:        printf("\n");
+call    0 never executed
+        -:  661:    }
+    #####:  662:    free(array_final);
+    %%%%%:  662-block  0
+        -:  663:}
+        -:  664:
+function autopopulare called 0 returned 0% blocks executed 0%
+    #####:  665:void autopopulare(PtrConsola ptr_consola) {
+    #####:  666:    autopopulare_service(ptr_consola->service);
+    %%%%%:  666-block  0
+call    0 never executed
+    #####:  667:    printf("Lista de oferte a fost autopopulata cu succes!\n");
+call    0 never executed
+        -:  668:
+    #####:  669:}

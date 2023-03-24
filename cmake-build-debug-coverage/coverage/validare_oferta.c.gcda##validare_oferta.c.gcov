@@ -1,0 +1,278 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/validator/validare_oferta.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\validator\validare_oferta.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\validator\validare_oferta.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Andrei on 10.03.2023.
+        -:    3://
+        -:    4:
+        -:    5:#include <malloc.h>
+        -:    6:#include <string.h>
+        -:    7:#include "validare_oferta.h"
+        -:    8:
+function constructor_validator called 3 returned 100% blocks executed 100%
+        3:    9:PtrValidareOferta constructor_validator()
+        -:   10:/**
+        -:   11: * functie de constructor pentru un validator
+        -:   12: * @return pointer catre structul de tip Validator ce urmeaza a fi dealocat
+        -:   13: */
+        -:   14:{
+        3:   15:    PtrValidareOferta validator_nou = (PtrValidareOferta) malloc(sizeof(ValidareOferta));
+        3:   16:    return validator_nou;
+        3:   16-block  0
+        -:   17:}
+        -:   18:
+function verifica_oferta called 14 returned 100% blocks executed 100%
+       14:   19:int verifica_oferta(PtrOferta oferta_candidat)
+        -:   20:/**
+        -:   21: * @param oferta_candidat oferta care urmeaza sa fie validata
+        -:   22: * @tparam oferta_candidat PtrOferta(pointer la oferta)
+        -:   23: * @return un cod de eroare format dintr-un numar abcde, unde:
+        -:   24: *                  daca a == 1 => "ID invalid!"
+        -:   25: *                  daca b == 1 => "Tip oferta invalid!"
+        -:   26: *                  daca c == 1 => "Destinatie invalida!"
+        -:   27: *                  daca d == 1 => "Data plecare invalida!"
+        -:   28: *                  daca e == 1 => "Pret invalid!"
+        -:   29: *                  daca toate sunt 0, atunci oferta este valida
+        -:   30: */
+        -:   31:{
+       14:   32:    int coduri_eroare = 0;
+       14:   33:    if (get_id(oferta_candidat) <= 0)
+       14:   33-block  0
+call    0 returned 14
+branch  1 taken 3 (fallthrough)
+branch  2 taken 11
+        3:   34:        coduri_eroare += 1;
+        3:   34-block  0
+       14:   35:    coduri_eroare*=10;
+       14:   36:    if (!(strcmp(get_tip(oferta_candidat), "Munte") == 0 || strcmp(get_tip(oferta_candidat), "Mare") == 0 || strcmp(get_tip(oferta_candidat), "City Break") == 0))
+       14:   36-block  0
+call    0 returned 14
+branch  1 taken 10 (fallthrough)
+branch  2 taken 4
+       10:   36-block  1
+call    3 returned 10
+branch  4 taken 8 (fallthrough)
+branch  5 taken 2
+        8:   36-block  2
+call    6 returned 8
+branch  7 taken 3 (fallthrough)
+branch  8 taken 5
+        3:   37:        coduri_eroare += 1;
+        3:   37-block  0
+       14:   38:    coduri_eroare*=10;
+       14:   39:    if (strlen(get_destinatie(oferta_candidat)) <= 2)
+       14:   39-block  0
+call    0 returned 14
+branch  1 taken 3 (fallthrough)
+branch  2 taken 11
+        3:   40:        coduri_eroare += 1;
+        3:   40-block  0
+       14:   41:    coduri_eroare*=10;
+       14:   42:    if (verifica_data(get_data_plecare(oferta_candidat)) == 0)
+       14:   42-block  0
+call    0 returned 14
+call    1 returned 14
+branch  2 taken 3 (fallthrough)
+branch  3 taken 11
+        3:   43:        coduri_eroare += 1;
+        3:   43-block  0
+       14:   44:    coduri_eroare*=10;
+       14:   45:    if (get_pret(oferta_candidat) <= 0)
+       14:   45-block  0
+call    0 returned 14
+branch  1 taken 3 (fallthrough)
+branch  2 taken 11
+        3:   46:        coduri_eroare += 1;
+        3:   46-block  0
+       14:   47:    return coduri_eroare;
+       14:   47-block  0
+        -:   48:}
+        -:   49:
+function an_bisect called 27 returned 100% blocks executed 100%
+       27:   50:int an_bisect(int an_primit)
+        -:   51:/**
+        -:   52: * verifica daca un an este bisect sau nu
+        -:   53: * @param an_primit intreg
+        -:   54: * @return  1 daca e bisect
+        -:   55: *          0 altfel
+        -:   56: */
+        -:   57:{
+       27:   58:    if(an_primit % 4 != 0)
+       27:   58-block  0
+branch  0 taken 23 (fallthrough)
+branch  1 taken 4
+       23:   59:        return 0;
+       23:   59-block  0
+        4:   60:    if(an_primit % 100 != 0)
+        4:   60-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 2
+        2:   61:        return 1;
+        2:   61-block  0
+        2:   62:    if(an_primit % 400 == 0)
+        2:   62-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   63:        return 1;
+        1:   63-block  0
+        1:   64:    return 0;
+        1:   64-block  0
+        -:   65:}
+        -:   66:
+function verifica_data called 49 returned 100% blocks executed 100%
+       49:   67:int verifica_data(char * data_primita)
+        -:   68:/**
+        -:   69: * functie de verificare validitate data primita
+        -:   70: * @param data_primita string in forma zz/ll/aaaa
+        -:   71: * @return  1 daca e valida
+        -:   72: *          0 altfel
+        -:   73: */
+        -:   74:{
+       49:   75:    int nr_zile[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+       49:   76:    if(strlen(data_primita) != 10)
+       49:   76-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 46
+        3:   77:        return 0;
+        3:   77-block  0
+       46:   78:    if(data_primita[2] != '/' || data_primita[5] != '/')
+       46:   78-block  0
+branch  0 taken 44 (fallthrough)
+branch  1 taken 2
+       44:   78-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 43
+        3:   79:        return 0;
+        3:   79-block  0
+        -:   80:    int zi, luna, an, aux;
+        -:   81:
+       43:   82:    zi = data_primita[0] - '0';
+       43:   83:    if(zi < 0 || zi > 9)
+       43:   83-block  0
+branch  0 taken 42 (fallthrough)
+branch  1 taken 1
+       42:   83-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 41
+        2:   84:        return 0;
+        2:   84-block  0
+       41:   85:    zi *= 10;
+       41:   86:    aux = data_primita[1] - '0';
+       41:   87:    if(aux < 0 || aux > 9)
+       41:   87-block  0
+branch  0 taken 40 (fallthrough)
+branch  1 taken 1
+       40:   87-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 39
+        2:   88:        return 0;
+        2:   88-block  0
+       39:   89:    zi += aux;
+        -:   90:
+       39:   91:    luna = data_primita[3] - '0';
+       39:   92:    if(luna < 0 || luna > 9)
+       39:   92-block  0
+branch  0 taken 38 (fallthrough)
+branch  1 taken 1
+       38:   92-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 36
+        3:   93:        return 0;
+        3:   93-block  0
+       36:   94:    luna *= 10;
+       36:   95:    aux = data_primita[4] - '0';
+       36:   96:    if(aux < 0 || aux > 9)
+       36:   96-block  0
+branch  0 taken 34 (fallthrough)
+branch  1 taken 2
+       34:   96-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 33
+        3:   97:        return 0;
+        3:   97-block  0
+       33:   98:    luna += aux;
+        -:   99:
+       33:  100:    an = data_primita[6] - '0';
+       33:  101:    if(an != 2)
+       33:  101-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 32
+        1:  102:        return 0;
+        1:  102-block  0
+       32:  103:    an *= 10;
+       32:  104:    aux = data_primita[7] - '0';
+       32:  105:    if(aux != 0)
+       32:  105-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 31
+        1:  106:        return 0;
+        1:  106-block  0
+       31:  107:    an += aux;
+       31:  108:    an *= 10;
+       31:  109:    aux = data_primita[8] - '0';
+       31:  110:    if(aux < 2 || aux > 3)
+       31:  110-block  0
+branch  0 taken 28 (fallthrough)
+branch  1 taken 3
+       28:  110-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 27
+        4:  111:        return 0;
+        4:  111-block  0
+       27:  112:    an += aux;
+       27:  113:    an *= 10;
+       27:  114:    aux = data_primita[9] - '0';
+       27:  115:    if(aux < 0 || aux > 9)
+       27:  115-block  0
+branch  0 taken 26 (fallthrough)
+branch  1 taken 1
+       26:  115-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 25
+        2:  116:        return 0;
+        2:  116-block  0
+       25:  117:    an += aux;
+        -:  118:
+       25:  119:    if(an_bisect(an))
+       25:  119-block  0
+call    0 returned 25
+branch  1 taken 2 (fallthrough)
+branch  2 taken 23
+        2:  120:        nr_zile[2] = 29;
+        2:  120-block  0
+        -:  121:
+       25:  122:    if (0 >= luna || luna > 12)
+       25:  122-block  0
+branch  0 taken 23 (fallthrough)
+branch  1 taken 2
+       23:  122-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 22
+        3:  123:        return 0;
+        3:  123-block  0
+        -:  124:
+       22:  125:    if (0 >= zi || zi > nr_zile[luna])
+       22:  125-block  0
+branch  0 taken 21 (fallthrough)
+branch  1 taken 1
+       21:  125-block  1
+branch  2 taken 4 (fallthrough)
+branch  3 taken 17
+        5:  126:        return 0;
+        5:  126-block  0
+        -:  127:
+       17:  128:    return 1;
+       17:  128-block  0
+        -:  129:}
+        -:  130:
+function destructor_validator called 3 returned 100% blocks executed 100%
+        3:  131:void destructor_validator(PtrValidareOferta ptrvalid)
+        -:  132:/**
+        -:  133: * functie de destructor al validatorului
+        -:  134: * @param ptrvalid pointer catre structul de tip Validator ce urmeaza a fi dealocat
+        -:  135: */
+        -:  136:{
+        3:  137:    free(ptrvalid);
+        3:  138:}
+        -:  139:

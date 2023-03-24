@@ -1,0 +1,74 @@
+        -:    0:Source:C:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/main.c
+        -:    0:Graph:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\main.c.gcno
+        -:    0:Data:C:\Users\Andrei\Documents\Facultate\Semestrul_II\Programare orientata obiect\Laboratoare\Lab2-4\cmake-build-debug-coverage\CMakeFiles\Lab2_4.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1://problema 9 - agentie de turism
+        -:    2:/**
+        -:    3: * 9. Agentie de turism
+        -:    4:
+        -:    5:Creati o aplicatie care permite gestiunea ofertelor de la o agentie de turism.
+        -:    6:Fiecare oferta are: tip (munte,mare, citiy break), destinatie, data plecare, pret
+        -:    7:Aplicatia permite:
+        -:    8: a) Adaugarea de noi oferte.
+        -:    9: b) Actualizare oferte
+        -:   10: c) Stergere oferta
+        -:   11: d) Vizualizare oferete ordonat dupa pret, destinatie (crescator/descrescator)
+        -:   12: e) Vizualizare oferta filtrate dupa un criteriu (destinatie, tip, pret)
+        -:   13: */
+        -:   14:#include<stdio.h>
+        -:   15:#include "testing/teste_domeniu.h"
+        -:   16:#include "testing/teste_repository.h"
+        -:   17:#include "testing/teste_validator.h"
+        -:   18:#include "testing/teste_service.h"
+        -:   19:#include "repository/repository.h"
+        -:   20:#include "validator/validare_oferta.h"
+        -:   21:#include "service/service.h"
+        -:   22:#include "consola/consola.h"
+        -:   23:
+function ruleaza_toate_testele called 1 returned 100% blocks executed 100%
+        1:   24:void ruleaza_toate_testele()
+        -:   25:/**
+        -:   26: * functia de apel de teste
+        -:   27: */
+        -:   28:{
+        1:   29:    teste_domeniu();
+        1:   29-block  0
+call    0 returned 1
+        1:   30:    teste_validator();
+call    0 returned 1
+        1:   31:    teste_repository();
+call    0 returned 1
+        1:   32:    teste_service();
+call    0 returned 1
+        1:   33:    printf("Toate testele au rulat cu succes!\n");
+call    0 returned 1
+        1:   34:}
+        -:   35:
+function main called 1 returned 100% blocks executed 100%
+        1:   36:int main()
+        -:   37:/**
+        -:   38: * functia principala in care se creeaza toate structurile de care avem nevoie si care apeleaza si testele
+        -:   39: * @return 1 daca nu s-a generat nicio eroare si totul a functionat corect
+        -:   40: */
+        -:   41:{
+        1:   42:    ruleaza_toate_testele();
+        1:   42-block  0
+call    0 returned 1
+        -:   43:    PtrRepositoryOferte repository_agentie;
+        1:   44:    repository_agentie = constructor_repository();
+call    0 returned 1
+        -:   45:    PtrValidareOferta validator_agentie;
+        1:   46:    validator_agentie = constructor_validator();
+call    0 returned 1
+        -:   47:    PtrServiceOferte service_agentie;
+        1:   48:    service_agentie = constructor_service(repository_agentie, validator_agentie);
+call    0 returned 1
+        -:   49:    PtrConsola consola_agentie;
+        1:   50:    consola_agentie = constructor_consola(service_agentie);
+call    0 returned 1
+        1:   51:    run(consola_agentie);
+call    0 returned 1
+        1:   52:    destructor_consola(consola_agentie);
+call    0 returned 1
+        -:   53:
+        -:   54:}
