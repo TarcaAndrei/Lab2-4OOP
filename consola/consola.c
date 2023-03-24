@@ -29,6 +29,7 @@ int run(PtrConsola ptr_consola)
  */
 {
     printf("Salut,\nBine ai venit la agentia de turism!\n");
+    struct undo* u = initializare_undo();
     while(1){
         char comanda_brut[10];
         char comanda;
@@ -43,7 +44,8 @@ int run(PtrConsola ptr_consola)
             printf("6. Vizualizare oferte ordonate dupa pret.\n");
             printf("7. Vizualizare oferte ordonate dupa destinatie.\n");
             printf("8. Vizualizare oferte filtrate.\n");
-            printf("9. Inchidere aplicatie.\n");
+            printf("9. Undo.\n");
+            printf("t. Inchidere aplicatie.\n");
             printf("a. Autopopulare.\n");
         }
         printf(">>>");
@@ -58,13 +60,13 @@ int run(PtrConsola ptr_consola)
                 afisare_numar_oferte_consola(ptr_consola);
                 break;
             case '3':
-                adaugare_oferta_consola(ptr_consola);
+                adaugare_oferta_consola(u, ptr_consola);
                 break;
             case '4':
-                modificare_oferta_consola(ptr_consola);
+                modificare_oferta_consola(u, ptr_consola);
                 break;
             case '5':
-                stergere_oferta_consola(ptr_consola);
+                stergere_oferta_consola(u, ptr_consola);
                 break;
             case '6':
                 ordonare_oferta_consola(ptr_consola, 1);
@@ -81,13 +83,20 @@ int run(PtrConsola ptr_consola)
             case '\n':
                 break;
             case '9':
+                ptr_consola -> service -> repository = undo(u, ptr_consola ->service -> repository);
+                break;
+            case 't':
+                distrugere_undo(u);
                 return 0;
             case 'q':
+                distrugere_undo(u);
                 return 1;
             case 'Q':
+                distrugere_undo(u);
                 return 1;
             default:
                 printf("Comanda invalida!\n");
+                distrugere_undo(u);
                 break;
         }
     }
@@ -253,7 +262,7 @@ int nr_cifre(long n)
     return i;
 }
 
-void adaugare_oferta_consola(PtrConsola ptr_consola)
+void adaugare_oferta_consola(struct undo* u, PtrConsola ptr_consola)
 /**
  * functia de adaugare de oferta noua
  * citeste tot ce are nevoie pentru a crea un struct de tip oferta
@@ -295,6 +304,7 @@ void adaugare_oferta_consola(PtrConsola ptr_consola)
     fgets(buffer, 10, stdin);
     pret = strtod(buffer, NULL);
     //pret = atof(buffer);
+    deepcopy(u, ptr_consola ->service -> repository);
     cod_eroare = adauga_oferta_service(ptr_consola->service,id_oferta, tip, destinatie, data_plecare, pret);
     if(cod_eroare == 0){
         printf("Oferta adaugata cu succes!\n");
@@ -304,31 +314,41 @@ void adaugare_oferta_consola(PtrConsola ptr_consola)
     if(cod_eroare == 2){
         printf("Oferta deja prezenta in repository!\n");
         fflush(stdout);
+        u ->length--;
         return;
     }
+    int ok = 0;
     if(cod_eroare / 10000 == 1){
         printf("ID-ul este invalid!\n");
         cod_eroare = cod_eroare - 10000;
+        ok = 1;
     }
     if(cod_eroare / 1000 == 1){
         printf("Tip oferta invalid!\n");
         cod_eroare = cod_eroare - 1000;
+        ok = 1;
     }
     if(cod_eroare / 100 == 1){
         printf("Destinatie invalida!\n");
         cod_eroare = cod_eroare - 100;
+        ok = 1;
     }
     if(cod_eroare / 10 == 1){
         printf("Data de plecare este invalida!\n");
         cod_eroare = cod_eroare - 10;
+        ok = 1;
     }
     if(cod_eroare == 1){
         printf("Pretul este invalid!\n");
+        ok = 1;
+    }
+    if(ok){
+        u -> length--;
     }
     fflush(stdout);
 }
 
-void stergere_oferta_consola(PtrConsola ptr_consola)
+void stergere_oferta_consola(struct undo* u, PtrConsola ptr_consola)
 /**
  * functia de adaugare de oferta noua
  * citeste tot ce are nevoie pentru a sterge un struct de tip oferta
@@ -349,14 +369,17 @@ void stergere_oferta_consola(PtrConsola ptr_consola)
     if(nr_cifre(id_oferta) != strlen(interm)){
         id_oferta = -1;
     }
+    deepcopy(u, ptr_consola -> service -> repository);
     cod_eroare = sterge_oferta_service(ptr_consola->service, id_oferta);
     if(cod_eroare == 2){
         printf("Nu exista nicio oferta cu acest ID!\n");
+        u ->length--;
         fflush(stdout);
         return;
     }
     if(cod_eroare == 0){
         printf("ID invalid!\n");
+        u -> length--;
         fflush(stdout);
         return;
     }
@@ -375,7 +398,7 @@ void afisare_numar_oferte_consola(PtrConsola ptr_consola)
     printf("Numarul de oferte este: %d\n", numar_oferte);
 }
 
-void modificare_oferta_consola(PtrConsola ptr_consola)
+void modificare_oferta_consola(struct undo* u, PtrConsola ptr_consola)
 /**
  * functia de modificare a unui struct de tip oferta aflat deja in memorie
  * citeste tot ce are nevoie pentru a modifica un struct de tip oferta
@@ -418,6 +441,7 @@ void modificare_oferta_consola(PtrConsola ptr_consola)
     fgets(buffer, 10, stdin);
     pret = strtod(buffer, NULL);
     //pret = atof(buffer);
+    deepcopy(u, ptr_consola -> service -> repository);
     cod_eroare = modifica_oferta_service(ptr_consola->service,id_oferta, tip, destinatie, data_plecare, pret);
     if(cod_eroare == 0){
         printf("Oferta modificata cu succes!\n");
@@ -427,26 +451,36 @@ void modificare_oferta_consola(PtrConsola ptr_consola)
     if(cod_eroare == 2){
         printf("Oferta nu este prezenta in repository!\n");
         fflush(stdout);
+        u -> length--;
         return;
     }
+    int ok = 0;
     if(cod_eroare / 10000 == 1){
         printf("ID-ul este invalid!\n");
         cod_eroare = cod_eroare - 10000;
+        ok = 1;
     }
     if(cod_eroare / 1000 == 1){
         printf("Tip oferta invalid!\n");
         cod_eroare = cod_eroare - 1000;
+        ok = 1;
     }
     if(cod_eroare / 100 == 1){
         printf("Destinatie invalida!\n");
         cod_eroare = cod_eroare - 100;
+        ok = 1;
     }
     if(cod_eroare / 10 == 1){
         printf("Data de plecare este invalida!\n");
         cod_eroare = cod_eroare - 10;
+        ok = 1;
     }
     if(cod_eroare == 1){
         printf("Pretul este invalid!\n");
+        ok = 1;
+    }
+    if(ok){
+        u -> length--;
     }
     fflush(stdout);
 }
@@ -509,7 +543,7 @@ void filtrare_oferta_consola(PtrConsola ptr_consola)
  */
 {
     printf("Selecteaza criteriul dupa care se va face filtrarea:\n");
-    printf("destinatie/tip/pret:");
+    printf("destinatie/tip/pret/data:");
     PtrOferta *array_final;
     char buffer[25];
     char ordine = 0;
@@ -517,6 +551,8 @@ void filtrare_oferta_consola(PtrConsola ptr_consola)
     optiune[0] = '\0';
     char string[20];
     string[0] = '\0';
+    char an[20];
+    an[0] = '\0';
     double pret = 0;
     int nr_elemente;
     int lungime_finala;
@@ -537,6 +573,15 @@ void filtrare_oferta_consola(PtrConsola ptr_consola)
         copiere_buffer(buffer, string);
         if(strlen(string) < 2){
             printf("Tip invalid!\n");
+            return;
+        }
+    }
+    else if(strcmp(optiune, "data") == 0){
+        printf("Introdu anul dupa care sa cautam oferte:");
+        fgets(buffer, 25, stdin);
+        copiere_buffer(buffer, an);
+        if(strlen(an) < 4){
+            printf("An invalid!\n");
             return;
         }
     }
@@ -563,7 +608,7 @@ void filtrare_oferta_consola(PtrConsola ptr_consola)
         printf("Nu ai introdus o optiune posibila!\n");
         return;
     }
-    array_final = filtrare_oferte_service(ptr_consola->service, &lungime_finala, optiune, string, pret, ordine);
+    array_final = filtrare_oferte_service(ptr_consola->service, &lungime_finala, optiune, string, pret, ordine, an);
     nr_elemente = lungime_finala;
     if(nr_elemente == 0)
     {

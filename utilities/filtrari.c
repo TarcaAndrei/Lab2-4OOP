@@ -51,3 +51,15 @@ int filtrare_pret(PtrOferta *array, PtrOferta *arr_final, int lungime, double pr
     }
     return j;
 }
+
+int filtrare_data(PtrOferta *array, PtrOferta *arr_final, int lungime, char* an){
+    int j = 0;
+    for(int i = 0; i < lungime; ++i){
+        if(strcmp(get_data_plecare(array[i]) + 6, an) == 0){
+            arr_final[j] = array[i];
+            j++;
+        }
+    }
+
+    return j;
+}

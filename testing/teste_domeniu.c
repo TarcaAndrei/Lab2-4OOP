@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "../domeniu/oferta.h"
 //
 // Created by Andrei on 08.03.2023.
