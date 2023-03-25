@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lab2_4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab2_4">
+				<Option output="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Lab2_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 Lab2_4"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab2_4/fast">
+				<Option output="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Lab2_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 Lab2_4/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/Undo/undo.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/Undo/undo.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/consola/consola.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/consola/consola.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/main.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/repository/repository.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/repository/repository.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/service/service.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/service/service.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_domeniu.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_domeniu.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_repository.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_repository.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_service.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_service.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_validator.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/testing/teste_validator.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/utilities/filtrari.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/utilities/filtrari.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/utilities/sortare.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/utilities/sortare.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/validator/validare_oferta.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/validator/validare_oferta.h">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

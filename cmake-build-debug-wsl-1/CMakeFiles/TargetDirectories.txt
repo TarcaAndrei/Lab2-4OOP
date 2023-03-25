@@ -1,0 +1,3 @@
+/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/CMakeFiles/Lab2_4.dir
+/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl-1/CMakeFiles/rebuild_cache.dir

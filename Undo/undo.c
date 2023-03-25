@@ -39,7 +39,7 @@ void deepcopy(struct undo* undo, PtrRepositoryOferte oferte){
     }
     void* new_ptr = malloc((undo -> length + 1) * sizeof(PtrRepositoryOferte*));
     for(int i = 0; i < undo -> length; i++){
-        ((PtrRepositoryOferte)(new_ptr))[i] = ((PtrRepositoryOferte)(undo -> stack))[i];
+        ((PtrRepositoryOferte*)(new_ptr))[i] = ((PtrRepositoryOferte*)(undo -> stack))[i];
     }
     free(undo -> stack);
     undo -> stack = new_ptr;
