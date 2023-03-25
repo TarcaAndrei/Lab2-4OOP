@@ -9,9 +9,11 @@
 
 struct undo* initializare_undo(){
     struct undo* undo = (struct undo*)malloc(sizeof(struct undo));
-    undo ->length = 0;
+    undo -> length = 0;
     undo -> stack = NULL;
     undo -> lungime_absoluta = 0;
+    undo -> lista_provizorie = NULL;
+    undo -> lungime_lista = 0;
 
     return undo;
 }
@@ -53,7 +55,23 @@ PtrRepositoryOferte undo(struct undo* u, PtrRepositoryOferte oferte){
         printf("NU MAI PUTETI FACE UNDO!");
         return oferte;
     }
-    oferte = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1];
+    for(int i = 0; i < u ->lungime_lista; ++i){
+        free(u -> lista_provizorie[i]);
+    }
+    u -> lista_provizorie = malloc(((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lungime * sizeof(PtrOferta));
+    u -> lungime_lista = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lungime;
+    for(int i = 0; i < ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lungime; ++i){
+        PtrOferta new_oferta = malloc(sizeof(Oferta));
+        new_oferta -> id_oferta = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lista_oferte[i] ->id_oferta;
+        strcpy(new_oferta ->tip, ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lista_oferte[i] ->tip);
+        strcpy(new_oferta ->data_plecare, ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lista_oferte[i] ->data_plecare);
+        strcpy(new_oferta ->destinatie, ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lista_oferte[i] ->destinatie);
+        new_oferta ->pret = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lista_oferte[i] ->pret;
+        oferte -> lista_oferte[i] = new_oferta;
+        u -> lista_provizorie[i] = new_oferta;
+    }
+    oferte -> lungime = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1] ->lungime;
+//    oferte = ((PtrRepositoryOferte*)(u -> stack))[u ->length - 1];
     u -> length--;
 
     return oferte;
@@ -62,11 +80,12 @@ PtrRepositoryOferte undo(struct undo* u, PtrRepositoryOferte oferte){
 void distrugere_undo(struct undo* u){
     for(int i = 0; i < u -> lungime_absoluta; ++i){
         for(int j = 0; j < ((PtrRepositoryOferte*)(u -> stack))[i] ->lungime; ++j){
-            free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte[i]);
+            free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte[j]);
         }
         free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte);
         free(((PtrRepositoryOferte*)(u -> stack))[i]);
     }
     free(u -> stack);
+    free(u -> lista_provizorie);
     free(u);
 }

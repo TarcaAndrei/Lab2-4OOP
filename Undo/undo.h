@@ -12,6 +12,8 @@ struct undo{
     void* stack;
     int length;
     int lungime_absoluta;
+    PtrOferta* lista_provizorie;
+    int lungime_lista;
 };
 
 struct undo* initializare_undo();
