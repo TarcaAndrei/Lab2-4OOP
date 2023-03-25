@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lab2_4.dir/Undo/undo.c.o"
+  "CMakeFiles/Lab2_4.dir/Undo/undo.c.o.d"
   "CMakeFiles/Lab2_4.dir/consola/consola.c.o"
   "CMakeFiles/Lab2_4.dir/consola/consola.c.o.d"
   "CMakeFiles/Lab2_4.dir/domeniu/oferta.c.o"

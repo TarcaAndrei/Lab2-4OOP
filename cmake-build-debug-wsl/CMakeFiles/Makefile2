@@ -81,12 +81,12 @@ clean: CMakeFiles/Lab2_4.dir/clean
 CMakeFiles/Lab2_4.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target Lab2_4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target Lab2_4"
 .PHONY : CMakeFiles/Lab2_4.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Lab2_4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles" 13
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles" 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Lab2_4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/cmake-build-debug-wsl/CMakeFiles" 0
 .PHONY : CMakeFiles/Lab2_4.dir/rule

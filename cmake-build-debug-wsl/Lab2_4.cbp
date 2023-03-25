@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/Undo/undo.c">
+			<Option target="Lab2_4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/Undo/undo.h">
+			<Option target="Lab2_4"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/consola/consola.c">
 			<Option target="Lab2_4"/>
 		</Unit>

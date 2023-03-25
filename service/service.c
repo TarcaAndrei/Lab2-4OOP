@@ -28,7 +28,7 @@ void destructor_service(PtrServiceOferte ptr_service)
  * @param ptr_service pointerul catre structul de tip service care urmeaza sa fie dealocat
  */
 {
-    destructor_repository(ptr_service->repository);
+    //destructor_repository(ptr_service->repository);
     destructor_validator(ptr_service->validator);
     free(ptr_service);
 }

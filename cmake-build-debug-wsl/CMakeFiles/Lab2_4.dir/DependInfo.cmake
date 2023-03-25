@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/Undo/undo.c" "CMakeFiles/Lab2_4.dir/Undo/undo.c.o" "gcc" "CMakeFiles/Lab2_4.dir/Undo/undo.c.o.d"
   "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/consola/consola.c" "CMakeFiles/Lab2_4.dir/consola/consola.c.o" "gcc" "CMakeFiles/Lab2_4.dir/consola/consola.c.o.d"
   "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/domeniu/oferta.c" "CMakeFiles/Lab2_4.dir/domeniu/oferta.c.o" "gcc" "CMakeFiles/Lab2_4.dir/domeniu/oferta.c.o.d"
   "/mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare orientata obiect/Laboratoare/Lab2-4/main.c" "CMakeFiles/Lab2_4.dir/main.c.o" "gcc" "CMakeFiles/Lab2_4.dir/main.c.o.d"

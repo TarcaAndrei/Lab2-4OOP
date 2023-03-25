@@ -129,6 +129,30 @@ Lab2_4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/build
 .PHONY : Lab2_4/fast
 
+Undo/undo.o: Undo/undo.c.o
+.PHONY : Undo/undo.o
+
+# target to build an object file
+Undo/undo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/Undo/undo.c.o
+.PHONY : Undo/undo.c.o
+
+Undo/undo.i: Undo/undo.c.i
+.PHONY : Undo/undo.i
+
+# target to preprocess a source file
+Undo/undo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/Undo/undo.c.i
+.PHONY : Undo/undo.c.i
+
+Undo/undo.s: Undo/undo.c.s
+.PHONY : Undo/undo.s
+
+# target to generate assembly for a file
+Undo/undo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab2_4.dir/build.make CMakeFiles/Lab2_4.dir/Undo/undo.c.s
+.PHONY : Undo/undo.c.s
+
 consola/consola.o: consola/consola.c.o
 .PHONY : consola/consola.o
 
@@ -426,6 +450,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Lab2_4"
+	@echo "... Undo/undo.o"
+	@echo "... Undo/undo.i"
+	@echo "... Undo/undo.s"
 	@echo "... consola/consola.o"
 	@echo "... consola/consola.i"
 	@echo "... consola/consola.s"

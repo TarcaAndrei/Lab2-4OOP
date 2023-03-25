@@ -28,6 +28,7 @@ int run(PtrConsola ptr_consola)
  * @return codul 1 daca totul a fost efectuat cu succes - returneaza doar cand aplicatia esta inchisa
  */
 {
+    int primul_undo = 0;
     printf("Salut,\nBine ai venit la agentia de turism!\n");
     struct undo* u = initializare_undo();
     while(1){
@@ -83,20 +84,36 @@ int run(PtrConsola ptr_consola)
             case '\n':
                 break;
             case '9':
+                if(primul_undo == 0){
+                    destructor_repository(ptr_consola->service->repository);
+                    primul_undo = 1;
+                }
                 ptr_consola -> service -> repository = undo(u, ptr_consola ->service -> repository);
                 break;
             case 't':
+                if(primul_undo == 0){
+                    destructor_repository(ptr_consola->service->repository);
+                    primul_undo = 1;
+                }
                 distrugere_undo(u);
                 return 0;
             case 'q':
+                if(primul_undo == 0){
+                    destructor_repository(ptr_consola->service->repository);
+                    primul_undo = 1;
+                }
                 distrugere_undo(u);
                 return 1;
             case 'Q':
+                if(primul_undo == 0){
+                    destructor_repository(ptr_consola->service->repository);
+                    primul_undo = 1;
+                }
                 distrugere_undo(u);
                 return 1;
             default:
                 printf("Comanda invalida!\n");
-                distrugere_undo(u);
+                //distrugere_undo(u);
                 break;
         }
     }

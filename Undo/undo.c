@@ -31,14 +31,14 @@ void deepcopy(struct undo* undo, PtrRepositoryOferte oferte){
         copy_oferte -> lista_oferte[i] = new_ptr;
     }
     if(undo -> length == 0){
-        undo -> stack = malloc(sizeof(PtrRepositoryOferte*));
+        undo -> stack = malloc(sizeof(PtrRepositoryOferte*) * 2);
         ((PtrRepositoryOferte*)(undo -> stack))[0] = copy_oferte;
         undo -> length++;
         undo -> lungime_absoluta++;
         return;
     }
     void* new_ptr = malloc((undo -> length + 1) * sizeof(PtrRepositoryOferte*));
-    for(int i = 0; i < undo -> length; ++i){
+    for(int i = 0; i < undo -> length; i++){
         ((PtrRepositoryOferte)(new_ptr))[i] = ((PtrRepositoryOferte)(undo -> stack))[i];
     }
     free(undo -> stack);
@@ -62,7 +62,7 @@ PtrRepositoryOferte undo(struct undo* u, PtrRepositoryOferte oferte){
 void distrugere_undo(struct undo* u){
     for(int i = 0; i < u -> lungime_absoluta; ++i){
         for(int j = 0; j < ((PtrRepositoryOferte*)(u -> stack))[i] ->lungime; ++j){
-            free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte[i]);
+            free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte[j]);
         }
         free(((PtrRepositoryOferte*)(u -> stack))[i] -> lista_oferte);
         free(((PtrRepositoryOferte*)(u -> stack))[i]);

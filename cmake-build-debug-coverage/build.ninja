@@ -121,6 +121,12 @@ build CMakeFiles/Lab2_4.dir/utilities/filtrari.c.obj: C_COMPILER__Lab2_4_Debug C
   OBJECT_DIR = CMakeFiles\Lab2_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab2_4.dir\utilities
 
+build CMakeFiles/Lab2_4.dir/Undo/undo.c.obj: C_COMPILER__Lab2_4_Debug C$:/Users/Andrei/Documents/Facultate/Semestrul_II/Programare$ orientata$ obiect/Laboratoare/Lab2-4/Undo/undo.c || cmake_object_order_depends_target_Lab2_4
+  DEP_FILE = CMakeFiles\Lab2_4.dir\Undo\undo.c.obj.d
+  FLAGS = --coverage -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab2_4.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab2_4.dir\Undo
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab2_4
@@ -129,7 +135,7 @@ build CMakeFiles/Lab2_4.dir/utilities/filtrari.c.obj: C_COMPILER__Lab2_4_Debug C
 #############################################
 # Link the executable Lab2_4.exe
 
-build Lab2_4.exe: C_EXECUTABLE_LINKER__Lab2_4_Debug CMakeFiles/Lab2_4.dir/main.c.obj CMakeFiles/Lab2_4.dir/domeniu/oferta.c.obj CMakeFiles/Lab2_4.dir/testing/teste_domeniu.c.obj CMakeFiles/Lab2_4.dir/repository/repository.c.obj CMakeFiles/Lab2_4.dir/testing/teste_repository.c.obj CMakeFiles/Lab2_4.dir/service/service.c.obj CMakeFiles/Lab2_4.dir/validator/validare_oferta.c.obj CMakeFiles/Lab2_4.dir/testing/teste_validator.c.obj CMakeFiles/Lab2_4.dir/testing/teste_service.c.obj CMakeFiles/Lab2_4.dir/consola/consola.c.obj CMakeFiles/Lab2_4.dir/utilities/sortare.c.obj CMakeFiles/Lab2_4.dir/utilities/filtrari.c.obj
+build Lab2_4.exe: C_EXECUTABLE_LINKER__Lab2_4_Debug CMakeFiles/Lab2_4.dir/main.c.obj CMakeFiles/Lab2_4.dir/domeniu/oferta.c.obj CMakeFiles/Lab2_4.dir/testing/teste_domeniu.c.obj CMakeFiles/Lab2_4.dir/repository/repository.c.obj CMakeFiles/Lab2_4.dir/testing/teste_repository.c.obj CMakeFiles/Lab2_4.dir/service/service.c.obj CMakeFiles/Lab2_4.dir/validator/validare_oferta.c.obj CMakeFiles/Lab2_4.dir/testing/teste_validator.c.obj CMakeFiles/Lab2_4.dir/testing/teste_service.c.obj CMakeFiles/Lab2_4.dir/consola/consola.c.obj CMakeFiles/Lab2_4.dir/utilities/sortare.c.obj CMakeFiles/Lab2_4.dir/utilities/filtrari.c.obj CMakeFiles/Lab2_4.dir/Undo/undo.c.obj
   FLAGS = --coverage -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab2_4.dir

@@ -56,4 +56,6 @@ CMakeFiles/Lab2_4.dir/consola/consola.c.o: \
  /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../service/../repository/repository.h \
  /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../service/../repository/../domeniu/oferta.h \
  /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../service/../validator/validare_oferta.h \
- /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../service/../validator/../domeniu/oferta.h
+ /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../service/../validator/../domeniu/oferta.h \
+ /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../Undo/undo.h \
+ /mnt/c/Users/Andrei/Documents/Facultate/Semestrul_II/Programare\ orientata\ obiect/Laboratoare/Lab2-4/consola/../Undo/../repository/repository.h

@@ -65,5 +65,6 @@ void teste_service() {
     assert(modifica_oferta_service(service,-1, "\n", "\n", "\n", 0) ==10000);
     assert(modifica_oferta_service(service,100 , "\n", "\n", "\n", 0) ==2);
     assert(modifica_oferta_service(service,20 , "\n", "\n", "\n", 0) == 0);
+    destructor_repository(repo);
     destructor_service(service);
 }
